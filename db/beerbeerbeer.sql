@@ -31,7 +31,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `client` (
   `name` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `password` varchar(50) NOT NULL,
+  `password` varchar(32) NOT NULL,
   `address` varchar(200) NOT NULL,
   `birthday` date NOT NULL,
   `orders` int(11) DEFAULT NULL
