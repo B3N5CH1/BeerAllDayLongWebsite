@@ -5,11 +5,12 @@ echo "<!DOCTYPE html>";
 		echo "<head>";
 		echo "<meta charset='utf-8' />";
 		echo "<title>Sign Up</title>";
-		echo "<link rel='stylesheet' type='text/css' media='screen' href='../css/Style.css' />";
+		echo "<link rel='stylesheet' type='text/css' media='screen' href='../css/style.css' />";
 	echo "</head>";
 	echo "<body>";
 		echo "<h1>Sign Up</h1>";
-		echo "<p>Fill in the form to sign up as a new customer.</p>";
+		echo "<p>Fill in the form to sign up as a new customer.<br>
+		If you already have an account, you can log in <a href='./login.php'>here</a></p>";
 		echo "<div class='form'>";
 			echo "<form action='./registration.php' method='post'>";
 
