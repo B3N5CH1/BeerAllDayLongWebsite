@@ -109,6 +109,20 @@
 	}
 
 	$language = get_param('lang', 'en');
+
+
+		if (isset($_POST["logout"])) {
+			if ($_POST["logout"]) {
+				session_destroy();
+			}
+		}
+		if (isset($_SESSION["email"])) {
+			echo session_id();
+			echo "<p>".$_SESSION["email"]."<br>".$_SESSION["name"]."</p>";
+		}
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
