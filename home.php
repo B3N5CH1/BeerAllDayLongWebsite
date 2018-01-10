@@ -11,6 +11,15 @@
 		echo "</head>";
 
 		echo "<body>";
+			if (session_status() == PHP_SESSION_NONE) {
+				session_start();
+			}
+
+			if (isset($_SESSION["email"])) {
+				echo session_id();
+				echo "<p>".$_SESSION["email"]."<br>".$_SESSION["name"]."</p>";
+			}
+
 			echo "<h1>Beer</h1>";
 			echo "<p>I need beer!</p>";
 			echo "<p>You can sign up here:</p>";

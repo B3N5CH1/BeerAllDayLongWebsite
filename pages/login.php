@@ -5,14 +5,14 @@ echo "<!DOCTYPE html>";
 		echo "<head>";
 		echo "<meta charset='utf-8' />";
 		echo "<title>Login</title>";
-		echo "<link rel='stylesheet' type='text/css' media='screen' href='../css/style.css' />";
+		echo "<link rel='stylesheet' type='text/css' media='screen' href='../css/styleb.css' />";
 	echo "</head>";
-	echo "<body>";
+	echo "<body class='centered'>";
 		echo "<h1>Login</h1>";
 		echo "<p>Fill in the form to log in as an existing customer.<br>
 		If you don't have an account yet, you can sign up for one <a href='./signup.php'>here</a></p>";
 		echo "<div class='form'>";
-			echo "<form action='./clientPage.php' method='post'>";
+			echo "<form action='./userPage.php' method='post'>";
 
 				echo "<div class='form_col_l'>";
 					  echo "<p><label>Email: </label><input type='email' name='email' required='required'></p>";

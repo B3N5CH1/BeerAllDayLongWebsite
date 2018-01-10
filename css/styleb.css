@@ -6,7 +6,7 @@ body {
 	text-align: center;
 }
 
-h1, h2 {
+h1, h2, h3 {
 	color: black;
 	font-family: "Verdana", sans-serif;
 }
@@ -137,8 +137,8 @@ footer {
 }
 
 .container {
-    position:relative ;
-    width: 100%;
+	position:relative ;
+	width: 100%;
 }
 
 .image {
