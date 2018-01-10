@@ -1,5 +1,8 @@
 body {
 	background-color: #db9930;
+}
+
+body.centered {
 	text-align: center;
 }
 
