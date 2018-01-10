@@ -127,11 +127,11 @@
 	<style>
 	#wrap {
 		position:relative; /* make this relative to have the inner div absolute without breaking out */
-		width: 540px;  /* fix the width or else it'll be the entire page's width */
+		width: 840px;  /* fix the width or else it'll be the entire page's width */
 	}
 	#text {
 		position: absolute;
-		width: 340px;
+		width: 320px;
 		height : 200px;
 		right: 0;
 		top: 0;
@@ -204,6 +204,8 @@ margin-left: 50px;
       <title>Beer All Day Long</title>
       <link rel="stylesheet" type="text/css"
       media="screen" href="../css/styleq.css" />
+			<link rel="stylesheet" type="text/css"
+			media="screen" href="../css/styleb.css" />
     </head>
   <body>
 
@@ -212,7 +214,9 @@ margin-left: 50px;
     <div id="mySidenav" class="sidenav">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 
-      <a href="../index.php" >Back</a>
+			<?php
+				$url = "home.php";
+				echo "<a href=\"".add_param($url,'lang',$_GET['lang'])."\">Home</a>" ;?>
       <?php
         $url = "cart.php";
         echo "<a href=\"".add_param($url,'lang',$_GET['lang'])."\">".t('cart')."</a>" ;?>

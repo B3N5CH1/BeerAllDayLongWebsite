@@ -118,8 +118,8 @@
         <title>Beer All Day Long</title>
         <link rel="stylesheet" type="text/css"
 				media="screen" href="../css/styleq.css" />
-				 <link rel="stylesheet" type="text/css"
-				media="screen" href="../css/style.css" />
+				<link rel="stylesheet" type="text/css"
+        media="screen" href="../css/styleb.css" />
 				<style>
 
 					.sidenav {
