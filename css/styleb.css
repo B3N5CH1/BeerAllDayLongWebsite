@@ -92,6 +92,10 @@ button[type=submit] {
 	cursor: pointer;
 }
 
+button[type=submit]:hover {
+	background-color: #f2f2f2;
+}
+
 div.form {
 	display: inline-grid;
 	border-radius: 5px;
@@ -185,12 +189,12 @@ footer {
 }
 
 #wrap {
-	position:relative; /* make this relative to have the inner div absolute without breaking out */
-	max-width: 840px; /* fix the width or else it'll be the entire page's width */
+	position: relative; /* make this relative to have the inner div absolute without breaking out */
+	 max-width: 800px;/* fix the width or else it'll be the entire page's width */
 }
 #text {
 	position: absolute;
-	width: 320px;
+	width: 300px;
 	height : 200px;
 	right: 0;
 	top: 0;

@@ -1,5 +1,5 @@
 
-function addItem(id, count){
+function addItem(id){
   var el = getValue(id);
   document.getElementById(id).value = +el + 1 ;
 }
