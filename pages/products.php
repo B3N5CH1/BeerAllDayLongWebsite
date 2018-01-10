@@ -71,6 +71,7 @@
 								<div class=\"prod_details\">
       					<div class=\"prod_details\" style=\"display:inline;\"> ".$product['price']." ".t('currency')." </div>
       					<div class=\"prod_details\" style=\"display:inline;\"> ".$product['percentage']."% </div>
+      					<div class=\"prod_details\" style=\"display:inline;\"> ".$product['size']."cl </div>
                 <div class=\"prod_details\" style=\"display:inline;\">".strtoupper($product['nationality'])." </div>
 								</div>
 								<div id=\"outer\">

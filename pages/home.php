@@ -129,6 +129,9 @@
 				<?php
 					$url = "cart.php";
 					echo "<a href=\"".add_param($url,'lang',$_GET['lang'])."\">".t('cart')."</a>" ;?>
+				<?php
+					$url = "login.php";
+		 		 echo "<a href=\"".add_param($url,'lang',$_GET['lang'])."\">Login/Sign up</a>" ;?>
 			  <?php
 					$url = "about.php";
 					echo "<a href=\"".add_param($url,'lang',$_GET['lang'])."\">".t('about')."</a>" ;?>
