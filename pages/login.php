@@ -64,6 +64,8 @@ function t($key) {
 $language = get_param('lang', 'en');
 
 
+include '../classes/burger.php';
+include '../classes/db_query.php';
 
 
 echo "<!DOCTYPE html>";
@@ -71,9 +73,13 @@ echo "<!DOCTYPE html>";
 		echo "<head>";
 		echo "<meta charset='utf-8' />";
 		echo "<title>Login</title>";
+		echo "<script src=\"../javascript/sliding_menu.js\"></script>";
 		echo "<link rel='stylesheet' type='text/css' media='screen' href='../css/styleb.css' />";
 	echo "</head>";
-	echo "<body class='centered'>";
+	echo "<body>";
+		createBurger();
+		echo "<nav><span><span style=\"font-size:30px;cursor:pointer;position:relative;\" onclick=\"openNav()\">&#9776;</span></span></nav>";
+		echo "<main class='centered'>";
 		echo "<h1>Login</h1>";
 		echo "<p>".t("fill")."<a href='./signup.php'>".t("here")."</a></p>";
 		echo "<div class='form'>";
@@ -91,7 +97,6 @@ echo "<!DOCTYPE html>";
 
 			echo "</form>";
 		echo "</div>";
+		echo "</main>";
 	echo "</body>";
 echo "</html>";
-
-

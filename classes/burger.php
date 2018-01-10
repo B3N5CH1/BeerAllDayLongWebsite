@@ -23,7 +23,9 @@ function get_param($name, $default) {
 		$urlBase = $_SERVER['PHP_SELF'];
 		foreach( $languages as $lang ) {
 			$url = $urlBase;
-			$url = add_param($url,'type',$_GET['type']);
+			if (strpos($url, '/products.php?type')!==false){
+				$url = add_param($url,'type',$_GET['type']);
+			};
 			$class = $language == $lang ? 'active' : 'inactive';
 			echo "<a  href=\"".add_param($url,'lang', $lang)."\">".strtoupper($lang)."</a>";
 		}
@@ -111,7 +113,17 @@ function get_param($name, $default) {
 						'de' => 'Zum Warenkorb hinzufügen',
 						'fr' => 'Ajout au panier',
 						'en' => 'Add to cart'
-				)
+				),
+				'about_text' => array(
+				  'de' => '',
+				  'fr' => '',
+				  'en' => 'sdffffffffffffffffffffffffffffffff sdfffffffffffffffffffffff d sd s sd  d ds  d ds  sd  sd ds d s sd dsd  sd'
+				),
+        'policy_text' => array(
+          'de' => '',
+          'fr' => '',
+          'en' => ''
+        )
 
 		);
 		if (isset($texts[$key][$language])) {

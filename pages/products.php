@@ -4,14 +4,12 @@
 <head>
 
 
-			<script src="../javascript/jquery-3.2.1.min.js"></script>
+			<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 			<script src="../javascript/jquery_example.js"></script>
       <script src ="../javascript/incrementing.js"></script>
       <script src="../javascript/sliding_menu.js"></script>
       <meta charset="utf-8" />
       <title>Beer All Day Long</title>
-      <link rel="stylesheet" type="text/css"
-      media="screen" href="../css/styleq.css" />
 			<link rel="stylesheet" type="text/css"
 			media="screen" href="../css/styleb.css" />
     </head>
@@ -73,14 +71,16 @@
 								<div class=\"prod_details\">
       					<div class=\"prod_details\" style=\"display:inline;\"> ".$product['price']." ".t('currency')." </div>
       					<div class=\"prod_details\" style=\"display:inline;\"> ".$product['percentage']."% </div>
+      					<div class=\"prod_details\" style=\"display:inline;\"> ".$product['size']."cl </div>
                 <div class=\"prod_details\" style=\"display:inline;\">".strtoupper($product['nationality'])." </div>
 								</div>
 								<div id=\"outer\">
                   <div class=\"inner\"><button type=\"submit\" class=\"addBtn\" onClick=\"addItem(".$product['id'].")\" >+</button></div>
                 <div class=\"inner\"><button type=\"submit\" class=\"removeBtn\" onClick=\"removeItem(".$product['id'].")\">-</button></div>
                 <div class=\"inner\"><input type=\"number\" name=\"prod_num\" id=\"".$product['id']."\" value=\"0\"></div>
-                <div class=\"inner\"><button class=\"msgBtnBack\" onClick=\"addToCart(".$product['id'].")\">".t('addtocart')."</button></div>
 								<div class=\"inner\"><input type=\"submit\" class=\"button\" name=\"insert\" value=\"addToCart\" /></div>
+                <div class=\"inner\"><button class=\"msgBtnBack\" onClick=\"addToWaitList(".$product['id'].")\">".t('addtocart')."</button></div>
+
               </div>
       				</div>
       			</div>
