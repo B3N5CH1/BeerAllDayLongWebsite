@@ -12,9 +12,10 @@ echo "<html lang='en'>";
 	echo "<head>";
 	echo "<meta charset='utf-8' />";
 	echo "<title>User Page</title>";
+	echo "<script src=\"../javascript/sliding_menu.js\"></script>";
 	echo "<link rel='stylesheet' type='text/css' media='screen' href='../css/styleb.css' />";
 echo "</head>";
-echo "<body class='centered'>";
+echo "<body>";
 	createBurger();
 
 	echo "<nav>";
@@ -24,6 +25,7 @@ echo "<body class='centered'>";
 	  echo "</span>";
 	echo "</nav>";
 
+	echo "<main  class='centered'>";
 	echo "<h2>User Page</h2>";
 
 
@@ -53,7 +55,7 @@ echo "<body class='centered'>";
 	}
 
 
-
+	echo "</main>";
 echo "</body>";
 
 
@@ -73,14 +75,3 @@ function showUserInfo() {
 
 
 }
-
-
-
-
-
-
-
-
-
-
-
