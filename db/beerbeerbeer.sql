@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 23, 2017 at 03:38 PM
--- Server version: 10.1.26-MariaDB
--- PHP Version: 7.1.9
+-- Erstellungszeit: 10. Jan 2018 um 18:58
+-- Server-Version: 10.1.26-MariaDB
+-- PHP-Version: 7.1.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `beerbeerbeer`
+-- Datenbank: `beerbeerbeer`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `client`
+-- Tabellenstruktur für Tabelle `client`
 --
 
 CREATE TABLE `client` (
@@ -40,7 +40,7 @@ CREATE TABLE `client` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `orders`
+-- Tabellenstruktur für Tabelle `orders`
 --
 
 CREATE TABLE `orders` (
@@ -53,7 +53,7 @@ CREATE TABLE `orders` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `products`
+-- Tabellenstruktur für Tabelle `products`
 --
 
 CREATE TABLE `products` (
@@ -67,21 +67,47 @@ CREATE TABLE `products` (
   `percentage` float NOT NULL,
   `brand` varchar(50) NOT NULL,
   `type` varchar(20) NOT NULL,
-  `country` varchar(50) NOT NULL
+  `nationality` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Indexes for dumped tables
+-- Daten für Tabelle `products`
+--
+
+INSERT INTO `products` (`id`, `name`, `description_de`, `description_fr`, `description_en`, `size`, `price`, `percentage`, `brand`, `type`, `nationality`) VALUES
+('Lapin Kulta', 'Bier', 'Bière', 'Beer', 33, 3.4, 5.2, 'Lapin Kulta', 'Blonde', 'FIN'),
+('Becks', 'Bier', 'Bière', 'Beer', 50, 2.5, 4.9, 'Becks', 'Blonde', 'GER'),
+('Becks', 'Bier', 'Bière', 'Beer', 3000, 125, 4.9, 'Becks', 'Blonde', 'GER'),
+('Flensburger Winterbock', 'Bier', 'Bière', 'Beer', 33, 3.5, 7, 'Flensburger', 'Special', 'GER'),
+('Paulaner Hefe', 'Bier', 'Bière', 'Beer', 50, 3.2, 5.5, 'Paulaner', 'White', 'GER'),
+('Schneider Weisse', 'Bier', 'Bière', 'Beer', 50, 3.1, 5.4, 'Schneider', 'White', 'GER'),
+('Aare Amber', 'Bier', 'Bière', 'Beer', 30, 2.4, 5, 'Aare Bier', 'Blonde', 'SWI'),
+('Burgdorfer Helles', 'Bier', 'Bière', 'Beer', 50, 3.6, 4.9, 'Burgdorfer', 'Blonde', 'SWI'),
+('Doppelleu Chopfab Hell', 'Bier', 'Bière', 'Beer', 33, 2.4, 5, 'Doppelleu', 'Blonde', 'SWI'),
+('Boon Framboise', 'Bier', 'Bière', 'Beer', 37, 4.5, 5, 'F. Boon', 'Fruit', 'BEL'),
+('Chimay Blonde', 'Bier', 'Bière', 'Beer', 33, 3.4, 8, 'Chimay', 'Blonde', 'BEL'),
+('Hoegaarden Blanche', 'Bier', 'Bière', 'Beer', 33, 2.8, 4.9, 'Hoegaarden', 'White', 'BEL'),
+('Hoegaarden Blanche', 'Bier', 'Bière', 'Beer', 75, 4.1, 4.9, 'Hoegaarden', 'White', 'BEL'),
+('Duvel Blonde', 'Bier', 'Bière', 'Beer', 33, 3.5, 8.5, 'Duvel', 'Blonde', 'BEL'),
+('BierBienne 1', 'Bier', 'Bière', 'Beer', 33, 2.5, 5.2, 'BierBienne', 'Blonde', 'SWI'),
+('BierBienne 2', 'Bier', 'Bière', 'Beer', 33, 2.7, 5, 'BierBienne', 'Blonde', 'SWI'),
+('BierBienne 2', 'Bier', 'Bière', 'Beer', 2000, 110, 5.8, 'BierBienne', 'Blonde', 'SWI'),
+('BierBienne 3', 'Bier', 'Bière', 'Beer', 33, 2.8, 5.8, 'BierBienne', 'IPA', 'SWI'),
+('BierBienne 3', 'Bier', 'Bière', 'Beer', 2000, 120, 5.8, 'BierBienne', 'IPA', 'SWI'),
+('Guinness', 'Bier', 'Bière', 'Beer', 50, 4.2, 4.1, 'Guinness', 'Dark', 'IRL');
+
+--
+-- Indizes der exportierten Tabellen
 --
 
 --
--- Indexes for table `client`
+-- Indizes für die Tabelle `client`
 --
 ALTER TABLE `client`
   ADD PRIMARY KEY (`email`);
 
 --
--- Indexes for table `orders`
+-- Indizes für die Tabelle `orders`
 --
 ALTER TABLE `orders`
   ADD PRIMARY KEY (`id`),
@@ -89,33 +115,33 @@ ALTER TABLE `orders`
   ADD KEY `fk_email_client` (`client`);
 
 --
--- Indexes for table `products`
+-- Indizes für die Tabelle `products`
 --
 ALTER TABLE `products`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT für exportierte Tabellen
 --
 
 --
--- AUTO_INCREMENT for table `orders`
+-- AUTO_INCREMENT für Tabelle `orders`
 --
 ALTER TABLE `orders`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `products`
+-- AUTO_INCREMENT für Tabelle `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=95;
 
 --
--- Constraints for dumped tables
+-- Constraints der exportierten Tabellen
 --
 
 --
--- Constraints for table `orders`
+-- Constraints der Tabelle `orders`
 --
 ALTER TABLE `orders`
   ADD CONSTRAINT `fk_id_product` FOREIGN KEY (`product`) REFERENCES `products` (`id`),
