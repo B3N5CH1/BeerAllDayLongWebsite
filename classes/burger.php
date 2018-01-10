@@ -126,31 +126,31 @@ function get_param($name, $default) {
 
 
   function createBurger(){
-    $language = get_param('lang', 'en');
+	$language = get_param('lang', 'en');
 
   echo  "<div id=\"mySidenav\" class=\"sidenav\">
-      <a href=\"javascript:void(0)\" class=\"closebtn\" onclick=\"closeNav()\">&times;</a>
-      ";
+	  <a href=\"javascript:void(0)\" class=\"closebtn\" onclick=\"closeNav()\">&times;</a>
+	  ";
 
-        $url = "home.php";
-        echo "<a href=\"".add_param($url,'lang',$_GET['lang'])."\">Home</a>" ;
+		$url = "home.php";
+		echo "<a href=\"".add_param($url,'lang',$_GET['lang'])."\">Home</a>" ;
 
-         $url = "login.php";
-         echo "<a href=\"".add_param($url,'lang',$_GET['lang'])."\">Login/Sign up</a>" ;
+		 $url = "login.php";
+		 echo "<a href=\"".add_param($url,'lang',$_GET['lang'])."\">Login/Sign up</a>" ;
 
-        $url = "cart.php";
-        echo "<a href=\"".add_param($url,'lang',$_GET['lang'])."\">".t('cart')."</a>" ;
+		$url = "cart.php";
+		echo "<a href=\"".add_param($url,'lang',$_GET['lang'])."\">".t('cart')."</a>" ;
 
-        $url = "about.php";
-        echo "<a href=\"".add_param($url,'lang',$_GET['lang'])."\">".t('about')."</a>" ;
+		$url = "about.php";
+		echo "<a href=\"".add_param($url,'lang',$_GET['lang'])."\">".t('about')."</a>" ;
 
-        $url = "policy.php";
-        echo "<a href=\"".add_param($url,'lang',$_GET['lang'])."\">".t('policy')."</a>" ;
+		$url = "policy.php";
+		echo "<a href=\"".add_param($url,'lang',$_GET['lang'])."\">".t('policy')."</a>" ;
 
-          $url = "contact.php";
-          echo "<a href=\"".add_param($url,'lang',$_GET['lang'])."\">".t('contact')."</a>" ;
-      echo "<div>".languages($language)." </div>";
-    echo "</div>";
+		  $url = "contact.php";
+		  echo "<a href=\"".add_param($url,'lang',$_GET['lang'])."\">".t('contact')."</a>" ;
+	  echo "<div>".languages($language)." </div>";
+	echo "</div>";
   }
 
 

@@ -28,36 +28,36 @@
 	function t($key) {
 		global $language;
 		$texts = array(
-        'url' => array(
-          'de' => 'lang=de',
-          'fr' => 'lang=fr',
-          'en' => 'lang=en'
-        ),
+		'url' => array(
+		  'de' => 'lang=de',
+		  'fr' => 'lang=fr',
+		  'en' => 'lang=en'
+		),
 				'cart' => array(
-            'de' => 'Warenkorb',
-            'fr' => "Panier d'achats",
-            'en' => 'Cart'
-        ),
+			'de' => 'Warenkorb',
+			'fr' => "Panier d'achats",
+			'en' => 'Cart'
+		),
 				'about' => array(
-            'de' => 'Über uns',
-            'fr' => 'A propos de nous',
-            'en' => 'About us'
-        ),
+			'de' => 'Über uns',
+			'fr' => 'A propos de nous',
+			'en' => 'About us'
+		),
 				'policy' => array(
-            'de' => 'Politik',
-            'fr' => 'Politique',
-            'en' => 'Policy'
-        ),
+			'de' => 'Politik',
+			'fr' => 'Politique',
+			'en' => 'Policy'
+		),
 				'contact' => array(
-            'de' => 'Kontakt',
-            'fr' => 'Contact',
-            'en' => 'Contact'
-        ),
-        'about_text' => array(
-          'de' => '',
-          'fr' => '',
-          'en' => 'sdffffffffffffffffffffffffffffffff sdfffffffffffffffffffffff d sd s sd  d ds  d ds  sd  sd ds d s sd dsd  sd'
-        )
+			'de' => 'Kontakt',
+			'fr' => 'Contact',
+			'en' => 'Contact'
+		),
+		'about_text' => array(
+		  'de' => '',
+		  'fr' => '',
+		  'en' => 'sdffffffffffffffffffffffffffffffff sdfffffffffffffffffffffff d sd s sd  d ds  d ds  sd  sd ds d s sd dsd  sd'
+		)
 
 		);
 		if (isset($texts[$key][$language])) {
@@ -71,23 +71,23 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
-    <head>
+	<head>
 				<script src="../javascript/sliding_menu.js"></script>
-        <meta charset="utf-8" />
-        <title>Beer All Day Long</title>
-        <link rel="stylesheet" type="text/css"
-        media="screen" href="../css/styleb.css" />
+		<meta charset="utf-8" />
+		<title>Beer All Day Long</title>
+		<link rel="stylesheet" type="text/css"
+		media="screen" href="../css/styleb.css" />
 
-    </head>
+	</head>
 
-    <body>
+	<body>
 			<div id="mySidenav" class="sidenav">
-  			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-          <a href="../index.php" >Back</a>
+			  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+		  <a href="../index.php" >Back</a>
 				<?php
 					$url = "cart.php";
 					echo "<a href=\"".add_param($url,'lang',$_GET['lang'])."\">".t('cart')."</a>" ;?>
-  			<?php
+			  <?php
 					$url = "about.php";
 					echo "<a href=\"".add_param($url,'lang',$_GET['lang'])."\">".t('about')."</a>" ;?>
 				<?php
@@ -99,16 +99,16 @@
 				<div><?php languages($language); ?></div>
 			</div>
 
-      <nav>
+	  <nav>
 				<span>
 					<span style="font-size:30px;cursor:pointer;position:relative;" onclick="openNav()">&#9776; <?php content('about'); ?>
 					</span>
 				</span>
-    	</nav>
-      <section>
-      <div class="sometext"><?php  content('about_text');?>
-      </div>
-    </section>
+		</nav>
+	  <section>
+	  <div class="sometext"><?php  content('about_text');?>
+	  </div>
+	</section>
 
 </body>
 </html>
