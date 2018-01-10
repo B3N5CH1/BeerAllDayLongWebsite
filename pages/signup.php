@@ -5,7 +5,7 @@ echo "<!DOCTYPE html>";
 		echo "<head>";
 		echo "<meta charset='utf-8' />";
 		echo "<title>Sign Up</title>";
-		echo "<link rel='stylesheet' type='text/css' media='screen' href='../css/style.css' />";
+		echo "<link rel='stylesheet' type='text/css' media='screen' href='../css/styleb.css' />";
 	echo "</head>";
 	echo "<body>";
 		echo "<h1>Sign Up</h1>";
@@ -69,5 +69,3 @@ echo "<!DOCTYPE html>";
 		echo "</div>";
 	echo "</body>";
 echo "</html>";
-
-

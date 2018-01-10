@@ -78,6 +78,7 @@
             'fr' => 'Des bières blances douces et sucrés!',
             'en' => 'White beer! Fresh and sweet!'
         ),
+
 				'cart' => array(
             'de' => 'Warenkorb',
             'fr' => "Panier d'achats",
@@ -116,7 +117,9 @@
         <meta charset="utf-8" />
         <title>Beer All Day Long</title>
         <link rel="stylesheet" type="text/css"
-        media="screen" href="../css/styleq.css" />
+				media="screen" href="../css/styleq.css" />
+				 <link rel="stylesheet" type="text/css"
+				media="screen" href="../css/style.css" />
 				<style>
 
 					.sidenav {
