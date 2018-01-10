@@ -18,19 +18,20 @@ $values = array($name, $_POST["email"], $pw, $address, $bday);
 
 $succ = addToDB("client", $values);
 
-
-
-
-
 	echo "<!DOCTYPE html>";
 	echo "<html lang='en'>";
-		   echo "<head>";
-		   echo "<meta charset='utf-8' />";
-		   echo "<title>Sign Up</title>";
-		   echo "<link rel='stylesheet' type='text/css' media='screen' href='../css/styleb.css' />";
+		echo "<head>";
+		echo "<meta charset='utf-8' />";
+		echo "<title>Sign Up</title>";
+		echo "<link rel='stylesheet' type='text/css' media='screen' href='../css/styleb.css' />";
 	echo "</head>";
-	echo "<body>";
-
+	echo "<body class='centered'>";
+		if ($succ) {
+			echo "<h2>Success</h2>";
+			echo "<p>You successfully registrated. You can log in <a href='./login.php'>here</a> now.</p>";
+		} else {
+			echo "<p>There was an error signing up.</p>";
+		}
 
 
 	echo "</body>";

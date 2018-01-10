@@ -12,20 +12,6 @@ if ($conn->connect_error) {
 	die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT * FROM `client`";
-
-$res = $conn->query($sql);
-
-if ($res->num_rows > 0) {
-	// output data of each row
-	while($row = $res->fetch_assoc()) {
-		echo "name: " . $row["name"]. " - mail: " . $row["email"]. " - address" . $row["address"]. "<br>";
-	}
-} else {
-	echo "0 results";
-}
-
-
 function addToDB($tName, $values) {
 	global $conn;
 
@@ -35,31 +21,81 @@ function addToDB($tName, $values) {
 		$sql = $sql."name, email, password, address, birthday";
 		$sql = $sql.") VALUES (";
 		$sql = $sql."'".$values[0]."', '".$values[1]."', '".$values[2]."', ".$values[3].", '".$values[4]."'";
-		$sql = $sql.");";
 	} elseif ($tName == "products") {
 		$sql = $sql."name, description_de, description_fr, description_en, ".
 			"size, price, percentage, brand, type, country";
 	} elseif ($tName == "order") {
 		$sql = $sql."client, product, quantity";
 	}
-//
-//	$sql = $sql.") VALUES (";
-//
-//	for ($i = 0; $i < count($values); $i++) {
-//		$sql = $sql."'".$values[$i]."'";
-//		if ($i < (count($values)-1)) {
-//			$sql = $sql.", ";
-//		}
-//	}
-//
-//	$sql = $sql.");";
-//
+
+	$sql = $sql.");";
+
 	echo $sql;
 
 	$res = $conn->query($sql);
 
-	echo $res;
+	return $res;
 }
+
+function login($email, $pw) {
+	global $conn;
+
+	$sql = "SELECT password FROM `client` WHERE email='";
+	$sql = $sql.$email."';";
+
+	$res = $conn->query($sql);
+
+	if ($res) {
+		while ($obj = $res->fetch_object()) {
+			if ($obj->password == $pw) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+	} else {
+		echo "result is not 1";
+		return false;
+	}
+}
+
+function getUserData($email) {
+	global $conn;
+
+	$ret;
+
+	$sql = "SELECT * FROM `client` WHERE email='".$email."';";
+
+	$res = $conn->query($sql);
+
+	if ($res) {
+		while ($obj = $res->fetch_object()) {
+			$ret[0] = $obj->name;
+			$ret[1] = nl2br($obj->address);
+			$ret[2] = $obj->birthday;
+		}
+	} else {
+		echo "result is not 1";
+	}
+
+	return $ret;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
 
 
 
