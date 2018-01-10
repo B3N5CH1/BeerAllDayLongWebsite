@@ -5,7 +5,7 @@
 			echo "<head>";
 			echo "<meta charset='utf-8' />";
 			echo "<title>LeBeerShop</title>";
-			echo "<link rel='stylesheet' type='text/css' media='screen' href='css/Style.css' />";
+			echo "<link rel='stylesheet' type='text/css' media='screen' href='css/style.css' />";
 		echo "</head>";
 
 		echo "<body>";
