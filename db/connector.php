@@ -80,27 +80,15 @@ function getUserData($email) {
 
 	return $ret;
 
+}
 
-
-
-
-
+function getWaitingList($client){
+	global $conn;
+	return $conn->query("SELECT * FROM products, waitingorders WHERE waitingorders.client = '$client' AND products.id=waitingorders.product");
 
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+function getDB(){
+	global $conn;
+	return $conn;
+}

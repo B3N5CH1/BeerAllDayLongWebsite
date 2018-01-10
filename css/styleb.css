@@ -79,7 +79,7 @@ input[type=submit]:hover {
 	background-color: #45a049;
 }
 
-button[type=submit] {
+.plusMinusBtn{
 	width: 100%;
 	background-color: #b4b1b1;
 	size:20px;
@@ -92,7 +92,7 @@ button[type=submit] {
 	cursor: pointer;
 }
 
-button[type=submit]:hover {
+.plusMinusBtn:hover {
 	background-color: #f2f2f2;
 }
 

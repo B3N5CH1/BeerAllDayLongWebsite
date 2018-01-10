@@ -18,8 +18,20 @@
   <main>
 
   <?php
+	  require "../db/connector.php";
 	 	include '../classes/burger.php';
 		include '../classes/db_query.php';
+		if (session_status() == PHP_SESSION_NONE) {
+			session_start();
+		}
+
+		$client = session_id();
+		if (isset($_SESSION["email"])) {
+			echo session_id();
+			echo "<p>".$_SESSION["email"]."<br>".$_SESSION["name"]."</p>";
+		} else {
+			// user is not logged in -> Login page
+		}
 		createBurger();
 
 
@@ -33,18 +45,7 @@
 
 			echo "<h1 class=\"centered\">";content('content');echo "</h1>";
 
-      $servername = "localhost";
-      $username = "root";
-      $password = "";
-      $dbname = "beerbeerbeer";
-
-      // Create connection
-      $db = new mysqli($servername, $username, $password, $dbname);
-
-      // Check connection
-      if ($db->connect_error) {
-        die(" Connection failed: " . $db->connect_error);
-      }
+    $db = getDB();
 
       $type = $db->escape_string($_GET["type"]);
 
@@ -75,17 +76,28 @@
                 <div class=\"prod_details\" style=\"display:inline;\">".strtoupper($product['nationality'])." </div>
 								</div>
 								<div id=\"outer\">
-                  <div class=\"inner\"><button type=\"submit\" class=\"addBtn\" onClick=\"addItem(".$product['id'].")\" >+</button></div>
-                <div class=\"inner\"><button type=\"submit\" class=\"removeBtn\" onClick=\"removeItem(".$product['id'].")\">-</button></div>
-                <div class=\"inner\"><input type=\"number\" name=\"prod_num\" id=\"".$product['id']."\" value=\"0\"></div>
-								<div class=\"inner\"><input type=\"submit\" class=\"button\" name=\"insert\" value=\"addToCart\" /></div>
-                <div class=\"inner\"><button class=\"msgBtnBack\" onClick=\"addToWaitList(".$product['id'].")\">".t('addtocart')."</button></div>
-
+								<form method=\"post\" action=\"./products.php?type=".$type."&lang=".$lang."\">
+								  <div class=\"inner\" style=\"visibility: hidden;\"><input type=\"number\" name=\"id_val\" id=\"".$product['name']."\" value=\"".$product['id']."\"></div>
+                <div class=\"inner\"><input type=\"number\" name=\"prod_num\" min=\"1\" id=\"".$product['id']."\" value=\"0\"></div>
+								<div class=\"inner\"><input type=\"submit\" class=\"button\" name=\"addToCart\" value=\"addToCart\" /></div>
+								</form>
               </div>
       				</div>
       			</div>
       		</div>";
       }
+
+				$count = 0;
+						if(isset($_POST['addToCart'])){ // button name
+							if ($count > 0) $count = 1;
+							else {
+							 $quantity = $_POST['prod_num'];
+							 $product = $_POST['id_val'];
+							addToCart($db, $client, $product, $quantity);
+							$count = $count + 1;
+						}
+						}else{
+						};
 			echo "</span>";
 
       $db->close();

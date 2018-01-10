@@ -123,7 +123,22 @@ function get_param($name, $default) {
           'de' => '',
           'fr' => '',
           'en' => ''
-        )
+        ),
+				'fill' => array(
+					'de' => 'Füllen Sie das Formular aus, wenn Sie bereits ein Kunde sind.<br>Wenn Sie noch keinen haben, registrieren Sie sich ',
+					'fr' => '',
+					'en' => 'Fill in the form to log in as an existing customer.<br>If you don\'t have an account yet, you can sign up for one ',
+				),
+				'here' => array(
+					'de' => 'hier.',
+					'fr' => 'ici.',
+					'en' => 'here.'
+				),
+				'pw' => array(
+					'de' => 'Passwort',
+					'fr' => '',
+					'en' => 'Password'
+				)
 
 		);
 		if (isset($texts[$key][$language])) {

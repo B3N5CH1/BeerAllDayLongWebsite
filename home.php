@@ -10,7 +10,7 @@
 			echo "<link rel='stylesheet' type='text/css' media='screen' href='./css/styleb.css' />";
 		echo "</head>";
 
-		echo "<body>";
+		echo "<body class='centered'>";
 			if (session_status() == PHP_SESSION_NONE) {
 				session_start();
 			}

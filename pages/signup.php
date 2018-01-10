@@ -6,8 +6,21 @@ echo "<!DOCTYPE html>";
 		echo "<meta charset='utf-8' />";
 		echo "<title>Sign Up</title>";
 		echo "<link rel='stylesheet' type='text/css' media='screen' href='../css/styleb.css' />";
+		echo "<script src=\"../javascript/sliding_menu.js\"></script>";
 	echo "</head>";
-	echo "<body class='centered'>";
+	echo "<body>";
+	include '../classes/burger.php';
+ include '../classes/db_query.php';
+ createBurger();
+
+
+ echo "<nav>
+	 <span>
+		 <span style=\"font-size:30px;cursor:pointer;position:relative;\" onclick=\"openNav()\">&#9776;
+		 </span>
+	 </span>
+ </nav>";
+		echo "<main  class='centered'>";
 		echo "<h1>Sign Up</h1>";
 		echo "<p>Fill in the form to sign up as a new customer.<br>
 		If you already have an account, you can log in <a href='./login.php'>here</a></p>";
@@ -67,5 +80,6 @@ echo "<!DOCTYPE html>";
 
 			echo "</form>";
 		echo "</div>";
+		echo"</main>";
 	echo "</body>";
 echo "</html>";
