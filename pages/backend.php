@@ -84,7 +84,7 @@ echo "<!DOCTYPE html>";
 				echo "<tr>";
 					echo "<td>".$row['id']."</td>";
 					echo "<td>".$row['name']."</td>";
-					echo "<td>".$row['description_en']."</td>";
+					echo "<td>".$row['description_fr']."</td>";
 					echo "<td>".$row['size']."</td>";
 					echo "<td>".$row['price']."</td>";
 					echo "<td>".$row['percentage']."</td>";

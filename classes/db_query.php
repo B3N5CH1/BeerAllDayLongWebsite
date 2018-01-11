@@ -2,7 +2,7 @@
 
 function getBeers($db, $type) {
 
-  return $db->query("SELECT * FROM products WHERE type='$type'");
+  return $db->query("SELECT * FROM products WHERE type='$type' ORDER BY name ASC");
 }
 
 function addToCart($db, $client, $product, $quantity){
@@ -12,11 +12,11 @@ function addToCart($db, $client, $product, $quantity){
    }
 
    if (!$stmt->bind_param('sii', $client, $product, $quantity)) {
-   	echo "Bind failed: [".$db->error."]";
+	   echo "Bind failed: [".$db->error."]";
    }
    if (!$stmt->execute()) {
-	    echo "Execute failed: [".$db->error."]";
-    }
+		echo "Execute failed: [".$db->error."]";
+	}
 }
 
 function removeFromCart($db, $client, $id){
