@@ -46,10 +46,11 @@ echo "<body>";
 			$_SESSION["address"] = $values[1];
 			showUserInfo();
 		} else {
-			echo "<p>Could not log in.<br>Password or Email is wrong.<br><a href='./login.php'>Please try again</a>";
+			echo "<p>".t("loginError")."<a href='./login.php".add_param($url,'lang',$_GET['lang'])."'>Please try again</a>";
 			// login failure
 		}
 	} else {
+		echo "<p>".t('inproperAccess')."</p>";
 		// not logged in
 		// no post data
 	}
@@ -68,10 +69,11 @@ function showUserInfo() {
 	echo "<h3>Address</h3>";
 	echo "<p>".$_SESSION["address"]."</p>";
 
-	echo "<form class='bottom' action='./home.php' method='post'>";
+	echo "<form class='bottom' action='../home.php' method='post'>";
 		echo "<input type='hidden' name='logout' value='1'>";
 		echo "<input type='submit' value='Logout'>";
 	echo "</form>";
 
 
 }
+

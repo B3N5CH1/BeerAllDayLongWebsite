@@ -25,6 +25,15 @@ h2 {
 	font-size: 2.75em;
 }
 
+h3 {
+	font-size: 2.25em;
+}
+
+table, th, td {
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+
 p {
 	font-family: "Times New Roman", serif;
 

@@ -18,9 +18,9 @@ echo "<!DOCTYPE html>";
 		echo "<nav><span><span style=\"font-size:30px;cursor:pointer;position:relative;\" onclick=\"openNav()\">&#9776;</span></span></nav>";
 		echo "<main class='centered'>";
 		echo "<h1>Login</h1>";
-		echo "<p>".t("fill")."<a href='./signup.php?lang=en'>".t("here")."</a></p>";
+		echo "<p>".t("fill")."<a href='./signup.php".add_param($url,'lang',$_GET['lang'])."'>".t("here")."</a></p>";
 		echo "<div class='form'>";
-			echo "<form action='./userPage.php' method='post'>";
+			echo "<form action='./userPage.php".add_param($url,'lang',$_GET['lang'])."' method='post'>";
 
 				echo "<div class='form_col_l'>";
 					echo "<p><label>Email: </label><input type='email' name='email' required='required'>";

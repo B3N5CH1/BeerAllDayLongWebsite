@@ -50,39 +50,39 @@ function get_param($name, $default) {
 						'en'=>'Welcome to the page '
 				),
 				'button' => array(
-						'de' => 'Beim Produkten!',
+						'de' => 'Zu den Produkten!',
 						'fr' => 'Aux Produits!',
-						'en' => 'To Products!'
+						'en' => 'To the Products!'
 				),
 				'blondebeer' => array(
-						'de' => 'Beim Produkten!',
+						'de' => 'Zu den Produkten!',
 						'fr' => 'Aux Produits!',
-						'en' => 'To Products!'
+						'en' => 'To the Products!'
 				),
 				'darkbeer' => array(
-						'de' => 'Beim Produkten!',
+						'de' => 'Zu den Produkten!',
 						'fr' => 'Aux Produits!',
-						'en' => 'To Products!'
+						'en' => 'To the Products!'
 				),
 				'fruitbeer' => array(
-						'de' => 'Beim Produkten!',
+						'de' => 'Zu den Produkten!',
 						'fr' => 'Aux Produits!',
-						'en' => 'To Products!'
+						'en' => 'To the Products!'
 				),
 				'ipabeer' => array(
-						'de' => 'Beim Produkten!',
+						'de' => 'Zu den Produkten!',
 						'fr' => 'Aux Produits!',
-						'en' => 'To Products!'
+						'en' => 'To the Products!'
 				),
 				'specialbeer' => array(
-						'de' => 'Beim Produkten!',
+						'de' => 'Zu den Produkten!',
 						'fr' => 'Aux Produits!',
-						'en' => 'To Products!'
+						'en' => 'To the Products!'
 				),
 				'whitebeer' => array(
-						'de' => 'Beim Produkten!',
+						'de' => 'Zu den Produkten!',
 						'fr' => 'Aux Produits!',
-						'en' => 'To Products!'
+						'en' => 'To the Products!'
 				),
 				'cart' => array(
 						'de' => 'Warenkorb',
@@ -95,8 +95,8 @@ function get_param($name, $default) {
 						'en' => 'About us'
 				),
 				'policy' => array(
-						'de' => 'Politik',
-						'fr' => 'Politique',
+						'de' => 'Policy',
+						'fr' => 'Policy',
 						'en' => 'Policy'
 				),
 				'contact' => array(
@@ -115,30 +115,46 @@ function get_param($name, $default) {
 						'en' => 'Add to cart'
 				),
 				'about_text' => array(
-				  'de' => '',
-				  'fr' => '',
-				  'en' => 'sdffffffffffffffffffffffffffffffff sdfffffffffffffffffffffff d sd s sd  d ds  d ds  sd  sd ds d s sd dsd  sd'
+				  'de' => 'Über uns text',
+				  'fr' => 'Sur nous text',
+				  'en' => 'About us text'
 				),
-        'policy_text' => array(
-          'de' => '',
-          'fr' => '',
-          'en' => ''
-        ),
-				'fill' => array(
-					'de' => 'Füllen Sie das Formular aus, wenn Sie bereits ein Kunde sind.<br>Wenn Sie noch keinen haben, registrieren Sie sich ',
-					'fr' => '',
-					'en' => 'Fill in the form to log in as an existing customer.<br>If you don\'t have an account yet, you can sign up for one ',
-				),
-				'here' => array(
-					'de' => 'hier.',
-					'fr' => 'ici.',
-					'en' => 'here.'
-				),
-				'pw' => array(
-					'de' => 'Passwort',
-					'fr' => '',
-					'en' => 'Password'
-				)
+		'policy_text' => array(
+		  'de' => 'Hier ist unsere Policy',
+		  'fr' => 'C\'est notre policy',
+		  'en' => 'This is our policy'
+		),
+		'url' => array(
+			'de' => 'lang=de',
+			'fr' => 'lang=fr',
+			'en' => 'lang=en'
+		),
+		'fill' => array(
+			'de' => 'Füllen Sie das Formular aus, wenn Sie bereits ein Kunde sind.<br>Wenn Sie noch keinen haben, registrieren Sie sich ',
+			'fr' => 'asdf',
+			'en' => 'Fill in the form to log in as an existing customer.<br>If you don\'t have an account yet, you can sign up for one ',
+		),
+		'here' => array(
+			'de' => 'hier',
+			'fr' => 'ici',
+			'en' => 'here'
+		),
+		'pw' => array(
+			'de' => 'Passwort',
+			'fr' => 'asdf',
+			'en' => 'Password'
+		),
+		'loginError' => array(
+			'de' => 'Fehler beim einloggen.<br>Passwort und Email stimmten mit keinem Eintrag in der Datenbank überein.<br>',
+			'fr' => '',
+			'en' => 'Could not log in.<br>Password and Email did not match any entry in the database.<br>'
+		),
+		'inproperAccess' => array(
+			'de' => 'Sie möchten auf ungeeignetem Weg auf diese Seite zugreiffen. Bitte Verwenden Sie das Login.',
+			'fr' => 'ahfi',
+			'en' => 'You\'re accessing this page imroperly. Plese use the login.'
+
+		)
 
 		);
 		if (isset($texts[$key][$language])) {
@@ -162,8 +178,17 @@ function get_param($name, $default) {
 		$url = "home.php";
 		echo "<a href=\"".add_param($url,'lang',$_GET['lang'])."\">Home</a>" ;
 
-		 $url = "login.php";
-		 echo "<a href=\"".add_param($url,'lang',$_GET['lang'])."\">Login/Sign up</a>" ;
+		if (session_status() == PHP_SESSION_NONE) {
+			session_start();
+		}
+
+		if (isset($_SESSION["email"]) && $_SESSION["address"]) {
+			$url = "userPage.php";
+			echo "<a href=\"".add_param($url,'lang',$_GET['lang'])."\">User</a>" ;
+		} else {
+			$url = "login.php";
+			echo "<a href=\"".add_param($url,'lang',$_GET['lang'])."\">Login/Sign up</a>" ;
+		}
 
 		$url = "cart.php";
 		echo "<a href=\"".add_param($url,'lang',$_GET['lang'])."\">".t('cart')."</a>" ;

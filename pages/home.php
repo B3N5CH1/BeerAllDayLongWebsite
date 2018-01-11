@@ -111,18 +111,6 @@
 	$language = get_param('lang', 'en');
 
 
-		if (isset($_POST["logout"])) {
-			if ($_POST["logout"]) {
-				session_destroy();
-			}
-		}
-		if (isset($_SESSION["email"])) {
-			echo session_id();
-			echo "<p>".$_SESSION["email"]."<br>".$_SESSION["name"]."</p>";
-		}
-
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -145,7 +133,7 @@
 					echo "<a href=\"".add_param($url,'lang',$_GET['lang'])."\">".t('cart')."</a>" ;?>
 				<?php
 					$url = "login.php";
-		 		 echo "<a href=\"".add_param($url,'lang',$_GET['lang'])."\">Login/Sign up</a>" ;?>
+				  echo "<a href=\"".add_param($url,'lang',$_GET['lang'])."\">Login/Sign up</a>" ;?>
 			  <?php
 					$url = "about.php";
 					echo "<a href=\"".add_param($url,'lang',$_GET['lang'])."\">".t('about')."</a>" ;?>
