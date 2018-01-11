@@ -19,14 +19,16 @@
 
       <nav>
 				<span>
-					<span style="font-size:30px;cursor:pointer;position:relative;" onclick="openNav()">&#9776; <?php content('policy');?>
+					<span style="font-size:30px;cursor:pointer;position:relative;" onclick="openNav()">&#9776;
 					</span>
 				</span>
     	</nav>
 
-      <div class="some_text">
-        <?php content('policy_text');?>
-    </div>
+
+      		<h1  style="text-align:center;"><?php content('policy'); ?></h1>
+
+      	  <div class="sometext" style="text-align:center;"><?php  content('policy_text');?></div>
+
     </main>
   </body>
 </html>

@@ -116,12 +116,12 @@ function get_param($name, $default) {
 				),
 				'about_text' => array(
 				  'de' => 'Über uns text',
-				  'fr' => 'Sur nous text',
-				  'en' => 'About us text'
+				  'fr' => 'Nous sommes un groupe de deux étudiants de la Haute école spécialisé de Berne, étudiant les TI depuis trois ans.',
+				  'en' => 'We are a group of two student from the University of Applied Science of Bern, studying IT for the third year now.'
 				),
 		'policy_text' => array(
 		  'de' => 'Hier ist unsere Policy',
-		  'fr' => 'C\'est notre policy',
+		  'fr' => 'Ceci est notre policy',
 		  'en' => 'This is our policy'
 		),
 		'url' => array(
@@ -131,7 +131,7 @@ function get_param($name, $default) {
 		),
 		'fill' => array(
 			'de' => 'Füllen Sie das Formular aus, wenn Sie bereits ein Kunde sind.<br>Wenn Sie noch keinen haben, registrieren Sie sich ',
-			'fr' => 'asdf',
+			'fr' => 'Remplissez le formulaire pour vous inscrire.<br>Si vous n\'avez pas de compte vous pouvez vous enregistrer ',
 			'en' => 'Fill in the form to log in as an existing customer.<br>If you don\'t have an account yet, you can sign up for one ',
 		),
 		'here' => array(
@@ -141,17 +141,17 @@ function get_param($name, $default) {
 		),
 		'pw' => array(
 			'de' => 'Passwort',
-			'fr' => 'asdf',
+			'fr' => 'Mot de passe',
 			'en' => 'Password'
 		),
 		'loginError' => array(
 			'de' => 'Fehler beim einloggen.<br>Passwort und Email stimmten mit keinem Eintrag in der Datenbank überein.<br>',
-			'fr' => '',
+			'fr' => 'Problème lors du login.<br>Mot de passe et email ne correspondent à aucune entré de la base de donné.<br>',
 			'en' => 'Could not log in.<br>Password and Email did not match any entry in the database.<br>'
 		),
 		'inproperAccess' => array(
 			'de' => 'Sie möchten auf ungeeignetem Weg auf diese Seite zugreiffen. Bitte Verwenden Sie das Login.',
-			'fr' => 'ahfi',
+			'fr' => 'Vous essayez d\'acceder à cette page d\'une manière peu orthodoxe. Utilisez s\'il vous plait le login.',
 			'en' => 'You\'re accessing this page imroperly. Plese use the login.'
 
 		),

@@ -18,17 +18,19 @@
 		createBurger();
 
 		 ?>
-			
+
 	  <nav>
 				<span>
-					<span style="font-size:30px;cursor:pointer;position:relative;" onclick="openNav()">&#9776; <?php content('about'); ?>
+					<span style="font-size:30px;cursor:pointer;position:relative;" onclick="openNav()">&#9776;
 					</span>
 				</span>
 		</nav>
-	  <section>
-	  <div class="sometext"><?php  content('about_text');?>
-	  </div>
-	</section>
+
+
+		<h1  style="text-align:center;"><?php content('about'); ?></h1>
+
+	  <div class="sometext"><?php  content('about_text');?></div>
+
 
 </body>
 </html>

@@ -23,12 +23,14 @@
 
       <nav>
 				<span>
-					<span style="font-size:30px;cursor:pointer;position:relative;" onclick="openNav()">&#9776; <?php content('contact');?>
-					</span>
+					<span style="font-size:30px;cursor:pointer;position:relative;" onclick="openNav()">&#9776;
+          </span>
 				</span>
     	</nav>
 
-      <div class="contactTxt">
+      <h1  style="text-align:center;"><?php content('contact'); ?></h1>
+
+      <div class="contactTxt" style="text-align:center;">
         <div>benjaminlukas.graf@students.bfh.ch</div>
         <div>quentin.flueckiger@students.bfh.ch</div>
     </div>
