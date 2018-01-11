@@ -27,8 +27,6 @@
 
 		$client = session_id();
 		if (isset($_SESSION["email"])) {
-			echo session_id();
-			echo "<p>".$_SESSION["email"]."<br>".$_SESSION["name"]."</p>";
 		} else {
 			// user is not logged in -> Login page
 		}
@@ -51,7 +49,7 @@
 
       $lang = $db->escape_string($_GET["lang"]);
 
-      echo " Connected successfully </br>";
+
         if(!$result = getBeers($db, $type)){
           die("There was an error running the query [".$db->error."]");
       }

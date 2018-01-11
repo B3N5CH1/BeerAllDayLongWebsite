@@ -64,11 +64,23 @@
 						<div class=\"prod_details\" style=\"display:inline;\"> ".$product['quantity']."</div>
 						<div class=\"prod_details\" style=\"display:inline;\"> ".$product['size']."cl </div>
 						<div class=\"prod_details\" style=\"display:inline;\"> ".$product['price']*$product['quantity']." ".t('currency')." </div>
+						<div id=\"outer\">
+						<form method=\"post\" action=\"./cart.php?lang=".$lang."\">
+							<div class=\"inner\" style=\"visibility: hidden;\"><input type=\"number\" name=\"id_val\" id=\"".$product['id']."\" value=\"".$product['id']."\"></div>
+						<div class=\"inner\"><input type=\"submit\" class=\"button\" name=\"removeFromCart\" value=\"";content('rmvBtn');echo"\" /></div>
+						</form>
+					</div>
 						</div>
 						</div>
 					</div>
 				</div>";
 		}
+				if(isset($_POST['removeFromCart'])){ // button name
+					 $id = $_POST['id_val'];
+					removeFromCart($db, $client, $id);
+					header('Location:./cart.php?lang='.$lang);
+				}else{
+				};
 		?>
 
 </body>

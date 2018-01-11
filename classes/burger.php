@@ -154,6 +154,11 @@ function get_param($name, $default) {
 			'fr' => 'ahfi',
 			'en' => 'You\'re accessing this page imroperly. Plese use the login.'
 
+		),
+		'rmvBtn' => array(
+			'de' => 'Aus dem Warenkorb entfernen',
+			'fr' => 'Enlever du panier',
+			'en' => 'Remove from Cart'
 		)
 
 		);

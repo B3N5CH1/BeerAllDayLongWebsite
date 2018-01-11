@@ -18,3 +18,9 @@ function addToCart($db, $client, $product, $quantity){
 	    echo "Execute failed: [".$db->error."]";
     }
 }
+
+function removeFromCart($db, $client, $id){
+
+  return $db->query("DELETE FROM waitingorders WHERE client = '$client' AND id ='$id'");
+
+}
