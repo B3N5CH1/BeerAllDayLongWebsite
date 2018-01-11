@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 10. Jan 2018 um 18:58
+-- Erstellungszeit: 11. Jan 2018 um 10:21
 -- Server-Version: 10.1.26-MariaDB
 -- PHP-Version: 7.1.9
 
@@ -75,26 +75,39 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `name`, `description_de`, `description_fr`, `description_en`, `size`, `price`, `percentage`, `brand`, `type`, `nationality`) VALUES
-('Lapin Kulta', 'Bier', 'Bière', 'Beer', 33, 3.4, 5.2, 'Lapin Kulta', 'Blonde', 'FIN'),
-('Becks', 'Bier', 'Bière', 'Beer', 50, 2.5, 4.9, 'Becks', 'Blonde', 'GER'),
-('Becks', 'Bier', 'Bière', 'Beer', 3000, 125, 4.9, 'Becks', 'Blonde', 'GER'),
-('Flensburger Winterbock', 'Bier', 'Bière', 'Beer', 33, 3.5, 7, 'Flensburger', 'Special', 'GER'),
-('Paulaner Hefe', 'Bier', 'Bière', 'Beer', 50, 3.2, 5.5, 'Paulaner', 'White', 'GER'),
-('Schneider Weisse', 'Bier', 'Bière', 'Beer', 50, 3.1, 5.4, 'Schneider', 'White', 'GER'),
-('Aare Amber', 'Bier', 'Bière', 'Beer', 30, 2.4, 5, 'Aare Bier', 'Blonde', 'SWI'),
-('Burgdorfer Helles', 'Bier', 'Bière', 'Beer', 50, 3.6, 4.9, 'Burgdorfer', 'Blonde', 'SWI'),
-('Doppelleu Chopfab Hell', 'Bier', 'Bière', 'Beer', 33, 2.4, 5, 'Doppelleu', 'Blonde', 'SWI'),
-('Boon Framboise', 'Bier', 'Bière', 'Beer', 37, 4.5, 5, 'F. Boon', 'Fruit', 'BEL'),
-('Chimay Blonde', 'Bier', 'Bière', 'Beer', 33, 3.4, 8, 'Chimay', 'Blonde', 'BEL'),
-('Hoegaarden Blanche', 'Bier', 'Bière', 'Beer', 33, 2.8, 4.9, 'Hoegaarden', 'White', 'BEL'),
-('Hoegaarden Blanche', 'Bier', 'Bière', 'Beer', 75, 4.1, 4.9, 'Hoegaarden', 'White', 'BEL'),
-('Duvel Blonde', 'Bier', 'Bière', 'Beer', 33, 3.5, 8.5, 'Duvel', 'Blonde', 'BEL'),
-('BierBienne 1', 'Bier', 'Bière', 'Beer', 33, 2.5, 5.2, 'BierBienne', 'Blonde', 'SWI'),
-('BierBienne 2', 'Bier', 'Bière', 'Beer', 33, 2.7, 5, 'BierBienne', 'Blonde', 'SWI'),
-('BierBienne 2', 'Bier', 'Bière', 'Beer', 2000, 110, 5.8, 'BierBienne', 'Blonde', 'SWI'),
-('BierBienne 3', 'Bier', 'Bière', 'Beer', 33, 2.8, 5.8, 'BierBienne', 'IPA', 'SWI'),
-('BierBienne 3', 'Bier', 'Bière', 'Beer', 2000, 120, 5.8, 'BierBienne', 'IPA', 'SWI'),
-('Guinness', 'Bier', 'Bière', 'Beer', 50, 4.2, 4.1, 'Guinness', 'Dark', 'IRL');
+(75, 'Lapin Kulta', 'Bier', 'Bière', 'Beer', 33, 3.4, 5.2, 'Lapin Kulta', 'Blonde', 'FIN'),
+(76, 'Becks', 'Bier', 'Bière', 'Beer', 50, 2.5, 4.9, 'Becks', 'Blonde', 'GER'),
+(77, 'Becks', 'Bier', 'Bière', 'Beer', 3000, 125, 4.9, 'Becks', 'Blonde', 'GER'),
+(78, 'Flensburger Winterbock', 'Bier', 'Bière', 'Beer', 33, 3.5, 7, 'Flensburger', 'Special', 'GER'),
+(79, 'Paulaner Hefe', 'Bier', 'Bière', 'Beer', 50, 3.2, 5.5, 'Paulaner', 'White', 'GER'),
+(80, 'Schneider Weisse', 'Bier', 'Bière', 'Beer', 50, 3.1, 5.4, 'Schneider', 'White', 'GER'),
+(81, 'Aare Amber', 'Bier', 'Bière', 'Beer', 30, 2.4, 5, 'Aare Bier', 'Blonde', 'SWI'),
+(82, 'Burgdorfer Helles', 'Bier', 'Bière', 'Beer', 50, 3.6, 4.9, 'Burgdorfer', 'Blonde', 'SWI'),
+(83, 'Doppelleu Chopfab Hell', 'Bier', 'Bière', 'Beer', 33, 2.4, 5, 'Doppelleu', 'Blonde', 'SWI'),
+(84, 'Boon Framboise', 'Bier', 'Bière', 'Beer', 37, 4.5, 5, 'F. Boon', 'Fruit', 'BEL'),
+(85, 'Chimay Blonde', 'Bier', 'Bière', 'Beer', 33, 3.4, 8, 'Chimay', 'Blonde', 'BEL'),
+(86, 'Hoegaarden Blanche', 'Bier', 'Bière', 'Beer', 33, 2.8, 4.9, 'Hoegaarden', 'White', 'BEL'),
+(87, 'Hoegaarden Blanche', 'Bier', 'Bière', 'Beer', 75, 4.1, 4.9, 'Hoegaarden', 'White', 'BEL'),
+(88, 'Duvel Blonde', 'Bier', 'Bière', 'Beer', 33, 3.5, 8.5, 'Duvel', 'Blonde', 'BEL'),
+(89, 'BierBienne 1', 'Bier', 'Bière', 'Beer', 33, 2.5, 5.2, 'BierBienne', 'Blonde', 'SWI'),
+(90, 'BierBienne 2', 'Bier', 'Bière', 'Beer', 33, 2.7, 5, 'BierBienne', 'Blonde', 'SWI'),
+(91, 'BierBienne 2', 'Bier', 'Bière', 'Beer', 2000, 110, 5.8, 'BierBienne', 'Blonde', 'SWI'),
+(92, 'BierBienne 3', 'Bier', 'Bière', 'Beer', 33, 2.8, 5.8, 'BierBienne', 'IPA', 'SWI'),
+(93, 'BierBienne 3', 'Bier', 'Bière', 'Beer', 2000, 120, 5.8, 'BierBienne', 'IPA', 'SWI'),
+(94, 'Guinness', 'Bier', 'Bière', 'Beer', 50, 4.2, 4.1, 'Guinness', 'Dark', 'IRL');
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `waitingorders`
+--
+
+CREATE TABLE `waitingorders` (
+  `id` int(11) NOT NULL,
+  `client` varchar(55) NOT NULL,
+  `product` int(11) NOT NULL,
+  `quantity` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Indizes der exportierten Tabellen
@@ -121,6 +134,12 @@ ALTER TABLE `products`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indizes für die Tabelle `waitingorders`
+--
+ALTER TABLE `waitingorders`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT für exportierte Tabellen
 --
 
@@ -128,13 +147,19 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT für Tabelle `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT für Tabelle `products`
 --
 ALTER TABLE `products`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=95;
+
+--
+-- AUTO_INCREMENT für Tabelle `waitingorders`
+--
+ALTER TABLE `waitingorders`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Constraints der exportierten Tabellen
