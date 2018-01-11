@@ -70,32 +70,6 @@ CREATE TABLE `products` (
   `nationality` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Daten für Tabelle `products`
---
-
-INSERT INTO `products` (`id`, `name`, `description_de`, `description_fr`, `description_en`, `size`, `price`, `percentage`, `brand`, `type`, `nationality`) VALUES
-(75, 'Lapin Kulta', 'Bier', 'Bière', 'Beer', 33, 3.4, 5.2, 'Lapin Kulta', 'Blonde', 'FIN'),
-(76, 'Becks', 'Bier', 'Bière', 'Beer', 50, 2.5, 4.9, 'Becks', 'Blonde', 'GER'),
-(77, 'Becks', 'Bier', 'Bière', 'Beer', 3000, 125, 4.9, 'Becks', 'Blonde', 'GER'),
-(78, 'Flensburger Winterbock', 'Bier', 'Bière', 'Beer', 33, 3.5, 7, 'Flensburger', 'Special', 'GER'),
-(79, 'Paulaner Hefe', 'Bier', 'Bière', 'Beer', 50, 3.2, 5.5, 'Paulaner', 'White', 'GER'),
-(80, 'Schneider Weisse', 'Bier', 'Bière', 'Beer', 50, 3.1, 5.4, 'Schneider', 'White', 'GER'),
-(81, 'Aare Amber', 'Bier', 'Bière', 'Beer', 30, 2.4, 5, 'Aare Bier', 'Blonde', 'SWI'),
-(82, 'Burgdorfer Helles', 'Bier', 'Bière', 'Beer', 50, 3.6, 4.9, 'Burgdorfer', 'Blonde', 'SWI'),
-(83, 'Doppelleu Chopfab Hell', 'Bier', 'Bière', 'Beer', 33, 2.4, 5, 'Doppelleu', 'Blonde', 'SWI'),
-(84, 'Boon Framboise', 'Bier', 'Bière', 'Beer', 37, 4.5, 5, 'F. Boon', 'Fruit', 'BEL'),
-(85, 'Chimay Blonde', 'Bier', 'Bière', 'Beer', 33, 3.4, 8, 'Chimay', 'Blonde', 'BEL'),
-(86, 'Hoegaarden Blanche', 'Bier', 'Bière', 'Beer', 33, 2.8, 4.9, 'Hoegaarden', 'White', 'BEL'),
-(87, 'Hoegaarden Blanche', 'Bier', 'Bière', 'Beer', 75, 4.1, 4.9, 'Hoegaarden', 'White', 'BEL'),
-(88, 'Duvel Blonde', 'Bier', 'Bière', 'Beer', 33, 3.5, 8.5, 'Duvel', 'Blonde', 'BEL'),
-(89, 'BierBienne 1', 'Bier', 'Bière', 'Beer', 33, 2.5, 5.2, 'BierBienne', 'Blonde', 'SWI'),
-(90, 'BierBienne 2', 'Bier', 'Bière', 'Beer', 33, 2.7, 5, 'BierBienne', 'Blonde', 'SWI'),
-(91, 'BierBienne 2', 'Bier', 'Bière', 'Beer', 2000, 110, 5.8, 'BierBienne', 'Blonde', 'SWI'),
-(92, 'BierBienne 3', 'Bier', 'Bière', 'Beer', 33, 2.8, 5.8, 'BierBienne', 'IPA', 'SWI'),
-(93, 'BierBienne 3', 'Bier', 'Bière', 'Beer', 2000, 120, 5.8, 'BierBienne', 'IPA', 'SWI'),
-(94, 'Guinness', 'Bier', 'Bière', 'Beer', 50, 4.2, 4.1, 'Guinness', 'Dark', 'IRL');
-
 -- --------------------------------------------------------
 
 --
@@ -172,6 +146,32 @@ ALTER TABLE `orders`
   ADD CONSTRAINT `fk_id_product` FOREIGN KEY (`product`) REFERENCES `products` (`id`),
   ADD CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`client`) REFERENCES `client` (`email`) ON DELETE NO ACTION ON UPDATE CASCADE;
 COMMIT;
+
+--
+-- Daten für Tabelle `products`
+--
+
+INSERT INTO `products` (`name`, `description_de`, `description_fr`, `description_en`, `size`, `price`, `percentage`, `brand`, `type`, `nationality`) VALUES
+('Lapin Kulta', 'Bier', 'Bière', 'Beer', 33, 3.4, 5.2, 'Lapin Kulta', 'Blonde', 'FIN'),
+('Becks', 'Bier', 'Bière', 'Beer', 50, 2.5, 4.9, 'Becks', 'Blonde', 'GER'),
+('Becks', 'Bier', 'Bière', 'Beer', 3000, 125, 4.9, 'Becks', 'Blonde', 'GER'),
+('Flensburger Winterbock', 'Bier', 'Bière', 'Beer', 33, 3.5, 7, 'Flensburger', 'Special', 'GER'),
+('Paulaner Hefe', 'Bier', 'Bière', 'Beer', 50, 3.2, 5.5, 'Paulaner', 'White', 'GER'),
+('Schneider Weisse', 'Bier', 'Bière', 'Beer', 50, 3.1, 5.4, 'Schneider', 'White', 'GER'),
+('Aare Amber', 'Bier', 'Bière', 'Beer', 30, 2.4, 5, 'Aare Bier', 'Blonde', 'SWI'),
+('Burgdorfer Helles', 'Bier', 'Bière', 'Beer', 50, 3.6, 4.9, 'Burgdorfer', 'Blonde', 'SWI'),
+('Doppelleu Chopfab Hell', 'Bier', 'Bière', 'Beer', 33, 2.4, 5, 'Doppelleu', 'Blonde', 'SWI'),
+('Boon Framboise', 'Bier', 'Bière', 'Beer', 37, 4.5, 5, 'F. Boon', 'Fruit', 'BEL'),
+('Chimay Blonde', 'Bier', 'Bière', 'Beer', 33, 3.4, 8, 'Chimay', 'Blonde', 'BEL'),
+('Hoegaarden Blanche', 'Bier', 'Bière', 'Beer', 33, 2.8, 4.9, 'Hoegaarden', 'White', 'BEL'),
+('Hoegaarden Blanche', 'Bier', 'Bière', 'Beer', 75, 4.1, 4.9, 'Hoegaarden', 'White', 'BEL'),
+('Duvel Blonde', 'Bier', 'Bière', 'Beer', 33, 3.5, 8.5, 'Duvel', 'Blonde', 'BEL'),
+('BierBienne 1', 'Bier', 'Bière', 'Beer', 33, 2.5, 5.2, 'BierBienne', 'Blonde', 'SWI'),
+('BierBienne 2', 'Bier', 'Bière', 'Beer', 33, 2.7, 5, 'BierBienne', 'Blonde', 'SWI'),
+('BierBienne 2', 'Bier', 'Bière', 'Beer', 2000, 110, 5.8, 'BierBienne', 'Blonde', 'SWI'),
+('BierBienne 3', 'Bier', 'Bière', 'Beer', 33, 2.8, 5.8, 'BierBienne', 'IPA', 'SWI'),
+('BierBienne 3', 'Bier', 'Bière', 'Beer', 2000, 120, 5.8, 'BierBienne', 'IPA', 'SWI'),
+('Guinness', 'Bier', 'Bière', 'Beer', 50, 4.2, 4.1, 'Guinness', 'Dark', 'IRL');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
