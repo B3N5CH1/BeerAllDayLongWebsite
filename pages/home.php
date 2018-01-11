@@ -39,42 +39,42 @@
 						'en'=>'Page'
 				),
 				'content' => array(
-						'de'=>'Willkommen auf der Beer All Day Long Webshop ',
+						'de'=>'Willkommen auf dem Beer All Day Long Webshop ',
 						'fr'=>'Bienvenue au Beer All Day Long Webshop ',
 						'en'=>'Welcome to the Beer All Day Long Webshop '
 		),
 		'button' => array(
-			'de' => 'Beim Produkten!',
+			'de' => 'Zu den Produkten!',
 			'fr' => 'Aux Produits!',
 			'en' => 'To Products!'
 		),
 		'blondebeer' => array(
-			'de' => 'Beim Produkten!',
+			'de' => 'Unsere Auswahl and blonden Bieren, perfekt als Durstlöscher!',
 			'fr' => 'Notre choix de bière blondes pour éponger votre soif!',
 			'en' => 'Our choice of blonde beers to repel your thirst!'
 		),
 				'darkbeer' => array(
-			'de' => 'Beim Produkten!',
+			'de' => 'Die Dunklen, für alle, die es ein wenig bitter mögen!',
 			'fr' => 'Nos bières foncées pour apprécier un peu d`amertume!',
 			'en' => 'Our dark beers to enjoy some bitterness!'
 		),
 				'fruitbeer' => array(
-			'de' => 'Beim Produkten!',
+			'de' => 'Eine Auswahl an Fruchtigen für den Feinschmecker!',
 			'fr' => 'Un choix de bière fruitée pour les plus fins palais!',
 			'en' => 'A choice of fruit beers for the fine taster!'
 		),
 				'ipabeer' => array(
-			'de' => 'Beim Produkten!',
+			'de' => '\'Best of both worlds\' - bitter und mild!',
 			'fr' => 'Notre choix d`IPA, bières plus amères et douces en même temps!',
 			'en' => 'Our choice of IPA, a beer bitter and smooth at the same time!'
 		),
 				'specialbeer' => array(
-			'de' => 'Beim Produkten!',
+			'de' => 'Die Aussergewöhnlichen - Ingwer, Kürbis und weitere!',
 			'fr' => 'Un lot de bière spécial, au gingembre, citrouille et autre!',
 			'en' => 'Some strange one, ginger, pumpkin and others!'
 		),
 				'whitebeer' => array(
-			'de' => 'Beim Produkten!',
+			'de' => 'Weissbier! Frisch und süss!',
 			'fr' => 'Des bières blances douces et sucrés!',
 			'en' => 'White beer! Fresh and sweet!'
 		),
@@ -111,6 +111,11 @@
 	$language = get_param('lang', 'en');
 
 
+if (session_status() == PHP_SESSION_NONE) {
+	session_start();
+}
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -132,8 +137,14 @@
 					$url = "cart.php";
 					echo "<a href=\"".add_param($url,'lang',$_GET['lang'])."\">".t('cart')."</a>" ;?>
 				<?php
-					$url = "login.php";
-				  echo "<a href=\"".add_param($url,'lang',$_GET['lang'])."\">Login/Sign up</a>" ;?>
+					if (isset($_SESSION["email"]) && $_SESSION["address"]) {
+						$url = "userPage.php";
+						echo "<a href=\"".add_param($url,'lang',$_GET['lang'])."\">User</a>" ;
+					} else {
+						$url = "login.php";
+						echo "<a href=\"".add_param($url,'lang',$_GET['lang'])."\">Login/Sign up</a>" ;
+					}
+				?>
 			  <?php
 					$url = "about.php";
 					echo "<a href=\"".add_param($url,'lang',$_GET['lang'])."\">".t('about')."</a>" ;?>

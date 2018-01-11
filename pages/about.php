@@ -29,7 +29,7 @@
 
 		<h1  style="text-align:center;"><?php content('about'); ?></h1>
 
-	  <div class="sometext"><?php  content('about_text');?></div>
+	  <div class="sometext" style="text-align:center; position='relative'"><?php  content('about_text');?></div>
 
 
 </body>

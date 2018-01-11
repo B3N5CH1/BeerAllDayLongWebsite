@@ -115,7 +115,7 @@ function get_param($name, $default) {
 						'en' => 'Add to cart'
 				),
 				'about_text' => array(
-				  'de' => 'Über uns text',
+				  'de' => 'Wir sind eine Gruppe von Studenten an der Berner Fachhochschule und besuchen das Studium in Informatik.',
 				  'fr' => 'Nous sommes un groupe de deux étudiants de la Haute école spécialisé de Berne, étudiant les TI depuis trois ans.',
 				  'en' => 'We are a group of two student from the University of Applied Science of Bern, studying IT for the third year now.'
 				),
