@@ -2,8 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-		<script src="../javascript/jquery_example.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script src ="../javascript/incrementing.js"></script>
 		<script src="../javascript/sliding_menu.js"></script>
 		<meta charset="utf-8" />
@@ -11,6 +10,16 @@
 		<link rel="stylesheet" type="text/css"
 		media="screen" href="../css/styleb.css" />
 
+		<script>
+$(document).ready(function(){
+    $(".buttonUpdate").submit(function(){
+       alert("Bye! You now leave p1!");
+    });
+		$("#btn1").click(function(){
+		alert("Text: " + $("#test").text());
+});
+});
+</script>
 	</head>
 
 	<body>
@@ -67,7 +76,7 @@
 						<div id=\"outer\">
 						<form method=\"post\" action=\"./cart.php?lang=".$lang."\">
 							<div class=\"inner\" style=\"visibility: hidden;\"><input type=\"number\" name=\"id_val\" id=\"".$product['id']."\" value=\"".$product['id']."\"></div>
-						<div class=\"inner\"><input type=\"submit\" class=\"button\" name=\"removeFromCart\" value=\"";content('rmvBtn');echo"\" /></div>
+						<div class=\"inner\"><input type=\"submit\" class=\"buttonUpdate\" name=\"removeFromCart\" value=\"";content('rmvBtn');echo"\" /></div>
 						</form>
 					</div>
 						</div>
@@ -75,12 +84,13 @@
 					</div>
 				</div>";
 		}
-				if(isset($_POST['removeFromCart'])){ // button name
+				/*if(isset($_POST['removeFromCart'])){ // button name
 					 $id = $_POST['id_val'];
 					removeFromCart($db, $client, $id);
 					header('Location:./cart.php?lang='.$lang);
 				}else{
-				};
+				};*/
+				
 		?>
 
 </body>

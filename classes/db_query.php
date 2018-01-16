@@ -19,6 +19,19 @@ function addToCart($db, $client, $product, $quantity){
 	}
 }
 
+function updateCart($db, $client, $id, $qt){
+
+  if ( !$stmt = $db->prepare("UPDATE  waitingorders SET quantity = ? WHERE client = ? AND id = ?")){
+	   echo "Prepare failed: [".$db->error."]";
+   }
+
+   if (!$stmt->bind_param('iii', $qt, $client, $id)) {
+	   echo "Bind failed: [".$db->error."]";
+   }
+   if (!$stmt->execute()) {
+		echo "Execute failed: [".$db->error."]";
+	}
+}
 function removeFromCart($db, $client, $id){
 
   return $db->query("DELETE FROM waitingorders WHERE client = '$client' AND id ='$id'");
