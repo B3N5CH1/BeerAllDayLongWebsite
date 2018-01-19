@@ -23,9 +23,9 @@ echo "<!DOCTYPE html>";
 		echo "<main  class='centered'>";
 		echo "<h1>Sign Up</h1>";
 		echo "<p>Fill in the form to sign up as a new customer.<br>
-		If you already have an account, you can log in <a href='./login.php'>here</a></p>";
+		If you already have an account, you can log in <a href='./login.php".add_param($url,'lang',$_GET['lang'])."'>here</a></p>";
 		echo "<div class='form'>";
-			echo "<form action='./registration.php' method='post'>";
+			echo "<form action='./registration.php".add_param($url,'lang',$_GET['lang'])."' method='post'>";
 
 				echo "<div class='form_col_l'>";
 					echo "<p><label>First name: </label><input type='text' name='fname' required='required'></p>";
@@ -61,16 +61,16 @@ echo "<!DOCTYPE html>";
 					  echo "if (document.getElementById('pw').value ==";
 						echo "document.getElementById('vpw').value) {";
 						echo "document.getElementById('pwl').style.color = 'green';";
-						echo "document.getElementById('pwl').innerHTML = 'matching';";
+						echo "document.getElementById('pwl').innerHTML = 'The passwords match';";
 					  echo "} else {";
 						echo "document.getElementById('pwl').style.color = 'red';";
-						echo "document.getElementById('pwl').innerHTML = 'not matching';";
+						echo "document.getElementById('pwl').innerHTML = 'The passwords do not match';";
 					  echo "}";
 				  echo "}";
 				echo "</script>";
 
 				echo "<div class='form_col_l'>";
-					echo "<p><label id='pwl'>Password: </label><input id='pw' type='password' name='password' required='required'></p>";
+					echo "<p><label>Password: </label><input id='pw' type='password' name='password' required='required'></p>";
 				echo "</div>";
 				echo "<div class='form_col_r'>";
 					echo "<p><label id='pwl'>Verify password: </label><input id='vpw' type='password' name='vpassword' required='required' onkeyup='check();'></p>";

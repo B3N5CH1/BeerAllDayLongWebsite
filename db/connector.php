@@ -21,10 +21,11 @@ function addToDB($tName, $values) {
 		$sql = $sql."name, email, password, address, birthday";
 		$sql = $sql.") VALUES (";
 		$sql = $sql."'".$values[0]."', '".$values[1]."', '".$values[2]."', ".$values[3].", '".$values[4]."'";
-	} elseif ($tName == "products") {
-		$sql = $sql."name, description_de, description_fr, description_en, ".
-			"size, price, percentage, brand, type, country";
-	} elseif ($tName == "order") {
+	} else if ($tName == "products") {
+		$sql = $sql."name, description_de, description_fr, description_en, size, price, percentage, brand, type, nationality";
+		$sql = $sql.") VALUES (";
+		$sql = $sql."'".$values[0]."', '".$values[1]."', '".$values[2]."', '".$values[3]."', '".$values[4]."', '".$values[5]."', '".$values[6]."', '".$values[7]."', '".$values[8]."', '".$values[9]."'";
+	} else if ($tName == "order") {
 		$sql = $sql."client, product, quantity";
 	}
 
@@ -81,6 +82,15 @@ function getUserData($email) {
 	return $ret;
 
 }
+function getAllDataFromTable($table) {
+	global $conn;
+
+	$sql = "SELECT * FROM `".$table."`;";
+
+	$res = $conn->query($sql);
+
+	return $res;
+}
 
 function getWaitingList($client){
 	global $conn;
@@ -91,4 +101,29 @@ function getWaitingList($client){
 function getDB(){
 	global $conn;
 	return $conn;
+}
+
+function removeFromDB($table, $key) {
+	global $conn;
+
+	$sql = "DELETE FROM `".$table."` WHERE (";
+
+	if ($table == 'client') {
+		$sql = $sql."email='".$key."'";
+	} else if ($table == 'products') {
+		$sql = $sql."id='".$key."'";
+	}
+
+	$sql = $sql.");";
+
+	$res = $conn->query($sql);
+
+	return $res;
+}
+
+if (isset($_POST['email'])) {
+	echo removeFromDB('client', $_POST['email']);
+} else if (isset($_POST['id'])) {
+	echo "<script>alert('post correct')</script>";
+	echo removeFromDB('products', $_POST['id']);
 }

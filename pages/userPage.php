@@ -35,7 +35,7 @@ echo "<body>";
 	} elseif (isset($_POST["email"])) {
 		// not logged in
 		// post data
-		$email = $_POST["email"];
+		$email = getDB()->escape_string($_POST["email"]);
 		$pw = md5($_POST["password"]);
 
 		if (login($email, $pw)) {
@@ -76,4 +76,3 @@ function showUserInfo() {
 
 
 }
-
