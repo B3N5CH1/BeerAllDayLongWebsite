@@ -68,7 +68,7 @@ $(document).ready(function(){
 		echo "<span class=\"centered\">";
 		while($product = $result->fetch_assoc()){
 			$descr = "description_".$lang;
-			$img = ($product['name'].$product['size']);
+			$img = $product['name'].$product['size'];
 			$img =strtolower(str_replace(' ','',$img));
 
 			echo "<div id=\"wrap\">
