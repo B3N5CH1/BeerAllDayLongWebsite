@@ -1,7 +1,0 @@
-AuthUserFile C:/Users/Ben/Documents/GitHub/BeerAllDayLongWebsite/.htpasswd
-AuthGroupFile /dev/null
-AuthName "Please Enter Password"
-AuthType Basic
-Require user Admin
-ErrorDocument 403 /error_pages/403.html
-AddHandler server-parsed .html
