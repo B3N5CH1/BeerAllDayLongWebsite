@@ -160,7 +160,12 @@ function get_param($name, $default) {
 	    'de' => 'Aus dem Warenkorb entfernen',
 	    'fr' => 'Enlever du panier',
 	    'en' => 'Remove from Cart'
-	  )
+	  ),
+		'congrats' => array (
+			'de' => 'Danke für ihren Einkaufe !',
+			'fr' => 'Merci pour votre commande !',
+			'en' => 'Thank you for your purchase !!'
+		)
 
 	  );
 	  if (isset($texts[$key][$language])) {

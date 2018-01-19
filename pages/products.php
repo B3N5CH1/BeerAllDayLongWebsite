@@ -70,7 +70,7 @@
       				<div style=\"width:100%;\">
                 <div class=\"prod_detailbs\">".$product['name']." </div>
 								<div class=\"prod_details\">
-      					<div class=\"prod_details\" style=\"display:inline;\"> ".$product['price']." ".content('currency')." </div>
+      					<div class=\"prod_details\" style=\"display:inline;\"> ".$product['price']." ".t('currency')." </div>
       					<div class=\"prod_details\" style=\"display:inline;\"> ".$product['percentage']."% </div>
       					<div class=\"prod_details\" style=\"display:inline;\"> ".$product['size']."cl </div>
                 <div class=\"prod_details\" style=\"display:inline;\">".strtoupper($product['nationality'])." </div>
@@ -78,7 +78,7 @@
 								<div id=\"outer\">
 								<form method=\"post\" action=\"./products.php?type=".$type."&lang=".$lang."\">
 								  <div class=\"inner\" style=\"visibility: hidden;\"><input type=\"number\" name=\"id_val\" id=\"".$product['name']."\" value=\"".$product['id']."\"></div>
-                <div class=\"inner\"><input type=\"number\" name=\"prod_num\" min=\"1\" id=\"".$product['id']."\" value=\"0\"></div>
+                <div class=\"inner\"><input type=\"number\" name=\"prod_num\" min=\"0\" id=\"".$product['id']."\" value=\"0\"></div>
 								<div class=\"inner\"><input type=\"submit\" class=\"button\" name=\"addToCart\" value=\"addToCart\" /></div>
 								</form>
               </div>

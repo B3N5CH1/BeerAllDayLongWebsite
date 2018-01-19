@@ -58,7 +58,8 @@ $(document).ready(function(){
 
 		echo "<div class\"centered\">";
 		if (isset($_SESSION["email"]) && $_SESSION["address"]) {
-			echo "<button type=\"button\" class=\"checkout\" value=\"".$client."\">Checkout!</button>";
+			$url = "congrats.php";
+			echo "<button type=\"button\" class=\"checkout\" value=\"".$client."\" onclick=\"location.href = '".add_param($url, 'lang',$lang)."'\">Checkout!</button>";
 		} else {
 			$url = "login.php";
 			echo "<button type=\"button\" class=\"login\" value=\"".$client."\" onclick=\"location.href = '".add_param($url, 'lang',$lang)."'\">Login!</button>";

@@ -6,7 +6,6 @@ $( function() {
        function(response){
            console.log(response);
        },
-       location.reload(true)
      );
   };
 
