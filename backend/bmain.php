@@ -40,7 +40,7 @@ require "../db/connector.php";
 					echo "<td>".nl2br($row['address'])."</td>";
 					echo "<td>".$row['birthday']."</td>";
 					echo "<td>".$row['orders']."</td>";
-					echo "<td><button id='remove-client' value='".$row['email']."' >Delete</button></td>";
+					echo "<td><button class='remove-client' value='".$row['email']."' >Delete</button></td>";
 				echo "</tr>";
 			}
 			echo "</table>";
@@ -82,7 +82,7 @@ require "../db/connector.php";
 					echo "<td>".$row['brand']."</td>";
 					echo "<td>".$row['type']."</td>";
 					echo "<td>".$row['nationality']."</td>";
-					echo "<td><button id='remove-product' value='".$row['id']."' >Delete</button></td>";
+					echo "<td><button class='remove-product' value='".$row['id']."' >Delete</button></td>";
 				echo "</tr>";
 			}
 			echo "</table>";

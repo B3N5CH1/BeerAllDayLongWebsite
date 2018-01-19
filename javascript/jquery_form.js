@@ -205,28 +205,48 @@ function rmClient(email) {
 };
 
 function rmProd(id) {
-    alert("rmProd");
     $.ajax({
         url: '../db/connector.php',
         type: 'POST',
         data: {id: id},
         success: function(data) {
-            console.log(data);
             location.reload(true);
         }
     });
 };
 
-$("#remove-client").click(function() {
-    var email = $(this).val();
-    rmClient(email);
-});
+if (document.addEventListener) {
+    document.addEventListener("click", handleClick, false);
+}
+else if (document.attachEvent) {
+    document.attachEvent("onclick", handleClick);
+}
 
-$("#remove-product").click(function() {
-    alert("clicked");
-    var prodid = $(this).val();
-    rmProd(prodid);
-});
+function handleClick(event) {
+    event = event || window.event;
+    event.target = event.target || event.srcElement;
+
+    var element = event.target;
+
+    // Climb up the document tree from the target of the event
+    while (element) {
+        if (element.nodeName === "BUTTON" && /remove-client/.test(element.className)) {
+            var email = element.value;
+            rmClient(email);
+            break;
+        } else if (element.nodeName === "BUTTON" && /remove-product/.test(element.className)) {
+            var prodid = element.value;
+            rmProd(prodid);
+            break;
+        }
+
+        element = element.parentNode;
+    }
+}
+
+
+
+
 
 
 
