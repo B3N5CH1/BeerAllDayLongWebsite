@@ -1,6 +1,15 @@
 <?php
 
+// Pear Mail Library
+require_once "../pear_phpMail/Mail.php";
+
 require "../db/connector.php";
+include '../classes/burger.php';
+include '../classes/db_query.php';
+
+if (isset()) {
+	
+}
 
 $name = $_POST["fname"]." ".$_POST["lname"];
 
@@ -27,8 +36,12 @@ $succ = addToDB("client", $values);
 	echo "</head>";
 	echo "<body class='centered'>";
 		if ($succ) {
+
+
+
+
 			echo "<h2>Success</h2>";
-			echo "<p>You successfully registrated. You can log in <a href='./login.php'>here</a> now.</p>";
+			echo "<p>You successfully registrated. You can log in <a href='./login.php".add_param($url,'lang',$_GET['lang'])."'>here</a> now.</p>";
 		} else {
 			echo "<p>There was an error signing up.</p>";
 		}
