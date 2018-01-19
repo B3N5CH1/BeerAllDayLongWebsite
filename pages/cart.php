@@ -32,13 +32,12 @@ $(document).ready(function(){
 			session_start();
 		}
 
-		$client = session_id();
-//		if (isset($_SESSION["email"])) {
-//			echo session_id();
-//			echo "<p>".$_SESSION["email"]."<br>".$_SESSION["name"]."</p>";
-//		} else {
-//			// user is not logged in -> Login page
-//		}
+		if (isset($_SESSION["email"])) {
+			$client = $_SESSION["email"];
+			setOrderToUser($client, session_id());
+		} else {
+			$client = session_id();
+		}
 		createBurger();
 
 
@@ -56,8 +55,15 @@ $(document).ready(function(){
 			$lang = $db->escape_string($_GET["lang"]);
 
 		$result = getWaitingList($client);
+
 		echo "<div class\"centered\">";
-		echo "<button type=\"button\" class=\"checkout\" value=\"".$client."\">Checkout!</button>";
+		if (isset($_SESSION["email"]) && $_SESSION["address"]) {
+			echo "<button type=\"button\" class=\"checkout\" value=\"".$client."\">Checkout!</button>";
+		} else {
+			$url = "login.php";
+			echo "<button type=\"button\" class=\"login\" value=\"".$client."\" onclick=\"location.href = '".add_param($url, 'lang',$lang)."'\">Login!</button>";
+		}
+
 		echo "</div>";
 		echo "<span class=\"centered\">";
 		while($product = $result->fetch_assoc()){

@@ -121,9 +121,24 @@ function removeFromDB($table, $key) {
 	return $res;
 }
 
+function setOrderToUser($user, $sessionid){
+	global $conn;
+	return $conn -> query("UPDATE waitingorders SET client = '$user' WHERE client = '$sessionid'");
+}
+
+function confirmOrder($client){
+	global $conn;
+	return $conn->query("UPDATE  waitingorders SET confirmed = 1 WHERE client = '$client' AND confirmed = 0");
+
+}
+
 if (isset($_POST['rmemail'])) {
 	echo removeFromDB('client', $_POST['rmemail']);
 } else if (isset($_POST['id'])) {
 	echo "<script>alert('post correct')</script>";
 	echo removeFromDB('products', $_POST['id']);
+} else if (isset($_POST['confemail'])) {
+	   confirmOrder($_POST['confemail']);
+} else {
+	  echo "<script>console.log('Post values: ".var_dump($_POST)."')</script>";
 }

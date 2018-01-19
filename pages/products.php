@@ -24,9 +24,11 @@
 			session_start();
 		}
 
-		$client = session_id();
+
 		if (isset($_SESSION["email"])) {
+			$client = $_SESSION["email"];
 		} else {
+			$client = session_id();
 			// user is not logged in -> Login page
 		}
 		createBurger();
@@ -90,7 +92,8 @@
 							else {
 							 $quantity = $_POST['prod_num'];
 							 $product = $_POST['id_val'];
-							addToCart($db, $client, $product, $quantity);
+							 $sessionid = session_id();
+							addToCart($db, $client, $product, $quantity, $sessionid);
 							$count = $count + 1;
 						}
 						}else{

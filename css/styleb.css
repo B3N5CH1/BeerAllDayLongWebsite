@@ -88,7 +88,7 @@ input[type=submit]:hover {
 	background-color: #45a049;
 }
 
-button.checkout{
+button.checkout, button.login{
 	width: 100px;
 	background-color: #4CAF50;
 	color: white;
@@ -101,7 +101,7 @@ button.checkout{
   display:block;
 }
 
-button.checkout:hover {
+button.checkout, button.login:hover {
 	background-color: #45a049;
 }
 

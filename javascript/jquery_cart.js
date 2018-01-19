@@ -1,20 +1,13 @@
 $( function() {
   function checkOut(confemail) {
 
-    $.post("../classes/db_query.php",
+    $.post("../db/connector.php",
        {confemail: confemail},
        function(response){
            console.log(response);
-       }
-     );/*
-     $.ajax({
-          url: '../classes/db_query.php',
-          type: 'POST',
-          data: {email: email},
-          success: function(data) {
-            console.log("success");
-          }
-      });*/
+       },
+       location.reload(true)
+     );
   };
 
   if (document.addEventListener) {
@@ -38,7 +31,7 @@ $( function() {
             checkOut(confemail);
             break;
         } else {
-          console.log("HERE");
+          console.log("Button val: " + element.value);
         }
 
         element = element.parentNode;
