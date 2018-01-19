@@ -46,7 +46,7 @@ echo "<body>";
 			$_SESSION["address"] = $values[1];
 			showUserInfo();
 		} else {
-			echo "<p>".t("loginError")."<a href='./login.php".add_param($url,'lang',$_GET['lang'])."'>Please try again</a>";
+			echo "<p>".t("loginError")."<a href='./login.php".add_param($url,'lang',$_GET['lang'])."'>".t('tryAgain')."</a>";
 			// login failure
 		}
 	} else {
@@ -62,11 +62,11 @@ echo "</body>";
 
 
 function showUserInfo() {
-	echo "<p>You are successfully logged in. See your information below.</p>";
+	echo "<p>".t('logSucc')."</p>";
 
-	echo "<h3>Name</h3>";
+	echo "<h3>".t('name')."</h3>";
 	echo "<p>".$_SESSION["name"]."</p>";
-	echo "<h3>Address</h3>";
+	echo "<h3>".t('address')."</h3>";
 	echo "<p>".$_SESSION["address"]."</p>";
 
 	echo "<form class='bottom' action='../home.php' method='post'>";
