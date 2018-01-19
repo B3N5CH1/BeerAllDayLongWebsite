@@ -281,36 +281,38 @@ function t($key) {
 			'fr' => 'Vérifier le mot de passe',
 			'en' => 'Verify Password'
 		),
-		 'inproperAccess' => array(
-	    'de' => 'Sie möchten auf ungeeignetem Weg auf diese Seite zugreiffen. Bitte Verwenden Sie das Login.',
-	    'fr' => 'Vous essayez d\'acceder à cette page d\'une manière peu orthodoxe. Utilisez s\'il vous plait le login.',
-	    'en' => 'You\'re accessing this page imroperly. Plese use the login.'
-	  ),
-	  'rmvBtn' => array(
-	    'de' => 'Aus dem Warenkorb entfernen',
-	    'fr' => 'Enlever du panier',
-	    'en' => 'Remove from Cart'
-	  ),
+		'inproperAccess' => array(
+			'de' => 'Sie möchten auf ungeeignetem Weg auf diese Seite zugreiffen. Bitte Verwenden Sie das Login.',
+			'fr' => 'Vous essayez d\'acceder à cette page d\'une manière peu orthodoxe. Utilisez s\'il vous plait le login.',
+			'en' => 'You\'re accessing this page imroperly. Plese use the login.'
+		),
+		'rmvBtn' => array(
+			'de' => 'Aus dem Warenkorb entfernen',
+			'fr' => 'Enlever du panier',
+			'en' => 'Remove from Cart'
+		),
 		'congrats' => array (
 			'de' => 'Danke für ihren Einkau!',
 			'fr' => 'Merci pour votre commande!',
 			'en' => 'Thank you for your purchase!'
 		)
 
-	  );
-	  if (isset($texts[$key][$language])) {
-	    return $texts[$key][$language];
-	  } else {
-	    return "[$key]";
-	}
-
-
 	);
-	if (isset($texts[$key][$language])) {
-		return $texts[$key][$language];
-	} else {
-		return "[$key]";
-	}
+}
+
+if (isset($texts[$key][$language])) {
+	return $texts[$key][$language];
+} else {
+	return "[$key]";
+}
+
+
+);
+if (isset($texts[$key][$language])) {
+	return $texts[$key][$language];
+} else {
+	return "[$key]";
+}
 }
 
 $language = get_param('lang', 'en');
