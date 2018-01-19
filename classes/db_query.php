@@ -25,12 +25,25 @@ function updateCart($db, $client, $id, $qt){
 	   echo "Prepare failed: [".$db->error."]";
    }
 
-   if (!$stmt->bind_param('iii', $qt, $client, $id)) {
+   if (!$stmt->bind_param('isi', $qt, $client, $id)) {
 	   echo "Bind failed: [".$db->error."]";
    }
    if (!$stmt->execute()) {
 		echo "Execute failed: [".$db->error."]";
 	}
+}
+
+function confirmOrder($db, $logclient, $sesclient){
+  if ( !$stmt = $db->prepare("UPDATE  waitingorders SET confirmed = 1, orderGroup = client, client = ? WHERE client = ? AND confirmed = 0")){
+  	   echo "Prepare failed: [".$db->error."]";
+     }
+
+     if (!$stmt->bind_param('ss', $logclient, $sesclient)) {
+  	   echo "Bind failed: [".$db->error."]";
+     }
+     if (!$stmt->execute()) {
+  		echo "Execute failed: [".$db->error."]";
+  	}
 }
 function removeFromCart($db, $client, $id){
 

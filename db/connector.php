@@ -84,7 +84,7 @@ function getUserData($email) {
 
 function getWaitingList($client){
 	global $conn;
-	return $conn->query("SELECT * FROM products, waitingorders WHERE waitingorders.client = '$client' AND products.id=waitingorders.product ORDER BY products.name ASC");
+	return $conn->query("SELECT * FROM products, waitingorders WHERE waitingorders.client = '$client' AND products.id=waitingorders.product AND waitingorders.confirmed = 0 ORDER BY products.name ASC");
 
 }
 
