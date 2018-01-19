@@ -7,25 +7,99 @@ require "../db/connector.php";
 include '../classes/burger.php';
 include '../classes/db_query.php';
 
-if (isset()) {
-	
+$conn = getDB();
+$name;
+$street;
+$city;
+$country;
+$pw;
+$bday;
+$email;
+
+$succ = false;
+
+if (isset($_POST["fname"]) && isset($_POST["lname"])) {
+	$name = $conn->escape_string($_POST["fname"])." ".$conn->escape_string($_POST["lname"]);
+
+	if (isset($_POST["street"]) && isset($_POST["hnum"])) {
+		$street = $conn->escape_string($_POST["street"])." ".$conn->escape_string($_POST["hnum"]);
+
+		if (isset($_POST["zip"]) && isset($_POST["city"])) {
+			$city = $conn->escape_string($_POST["zip"])." ".$conn->escape_string($_POST["city"]);
+
+			if (isset($_POST["country"])) {
+				$country = $conn->escape_string($_POST["country"]);
+
+				if (isset($_POST["password"])) {
+					$pw = md5($_POST["password"]);
+
+					if (isset($_POST["bday"])) {
+						$bday = date('Y-m-d', strtotime($_POST["bday"]));
+
+						if (isset($_POST["email"])) {
+							$email = $_POST["email"];
+
+							$lf = "CHAR(13)";
+
+							$address = "(SELECT CONCAT('".$street."', "."$lf".", '".$city."', ".$lf.", '".$country."'))";
+
+							$values = array($name, $email, $pw, $address, $bday);
+
+							$succ = addToDB("client", $values);
+
+							//sendMail($email);
+						} else {
+							echo "[Error] No birthday received.";
+						}
+					} else {
+						echo "[Error] No birthday received.";
+					}
+				} else {
+					echo "[Error] No password received.";
+				}
+			} else {
+				echo "[Error] No country received.";
+			}
+		} else {
+			echo "[Error] No zip and/or city received.";
+		}
+	} else {
+		echo "[Error] No street and/or house number received.";
+	}
+} else {
+	echo "[Error] No name received.";
 }
 
-$name = $_POST["fname"]." ".$_POST["lname"];
+function sendMail($to) {
+	$from = "LeBeerShop Team <LeBeerShop@gmail.com>";
+	$subject = "Registration!";
+	$body = "Hi!\n\nYou successfully registrated on LeBeerShop.ch\n\nYou can login with this email address.\n\nWe hope you find something you'll enjoy!\n\nKind regards\nThe LeBeerShop Team";
 
-$street = $_POST["street"]." ".$_POST["hnum"];
-$city = $_POST["zip"]." ".$_POST["city"];
-$country = $_POST["country"];
-$lf = "CHAR(13)";
+	$headers = array(
+    	'From' => $from,
+    	'To' => $to,
+    	'Subject' => $subject
+	);
 
-$address = "(SELECT CONCAT('".$street."', "."$lf".", '".$city."', ".$lf.", '".$country."'))";
+	$smtp = Mail::factory('smtp', array(
+        'host' => 'ssl://smtp.gmail.com',
+        'port' => '465',
+        'auth' => true,
+        'username' => 'lebeershop@gmail.com',
+        'password' => 'thisIsABadPassword'
+    ));
 
-$pw = md5($_POST["password"]);
-$bday = date('Y-m-d', strtotime($_POST["bday"]));;
+	$mail = $smtp->send($to, $headers, $body);
 
-$values = array($name, $_POST["email"], $pw, $address, $bday);
+	if (PEAR::isError($mail)) {
+    	echo('<p>' . $mail->getMessage() . '</p>');
+	} else {
+    	echo('<p>Message successfully sent!</p>');
+	}
+}
 
-$succ = addToDB("client", $values);
+echo $succ;
+
 
 	echo "<!DOCTYPE html>";
 	echo "<html lang='en'>";
@@ -36,7 +110,6 @@ $succ = addToDB("client", $values);
 	echo "</head>";
 	echo "<body class='centered'>";
 		if ($succ) {
-
 
 
 
