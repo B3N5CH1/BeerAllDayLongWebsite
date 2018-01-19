@@ -197,7 +197,7 @@ function rmClient(email) {
     $.ajax({
         url: '../db/connector.php',
         type: 'POST',
-        data: {email: email},
+        data: {rmemail: email},
         success: function(data) {
             location.reload(true);
         }

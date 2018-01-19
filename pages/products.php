@@ -5,7 +5,6 @@
 
 
 			<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-			<script src="../javascript/jquery_example.js"></script>
       <script src ="../javascript/incrementing.js"></script>
       <script src="../javascript/sliding_menu.js"></script>
       <meta charset="utf-8" />

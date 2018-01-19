@@ -5,6 +5,7 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script src ="../javascript/incrementing.js"></script>
 		<script src="../javascript/sliding_menu.js"></script>
+		<script src="../javascript/jquery_cart.js"></script>
 		<meta charset="utf-8" />
 		<title>Beer All Day Long</title>
 		<link rel="stylesheet" type="text/css"
@@ -55,6 +56,9 @@ $(document).ready(function(){
 			$lang = $db->escape_string($_GET["lang"]);
 
 		$result = getWaitingList($client);
+		echo "<div class\"centered\">";
+		echo "<button type=\"button\" class=\"checkout\" value=\"".$client."\">Checkout!</button>";
+		echo "</div>";
 		echo "<span class=\"centered\">";
 		while($product = $result->fetch_assoc()){
 			$descr = "description_".$lang;
@@ -74,7 +78,7 @@ $(document).ready(function(){
 						<div class=\"prod_details\" style=\"display:inline;\"> ".$product['size']."cl </div>
 						<div class=\"prod_details\" style=\"display:inline;\"> ".$product['price']*$product['quantity']." ".t('currency')." </div>
 						<div id=\"outer\">
-						<form method=\"post\" action=\"./cart.php?lang=".$lang."\">
+						<form method=\"post\" action=\"\">
 							<div class=\"inner\" style=\"visibility: hidden;\"><input type=\"number\" name=\"id_val\" id=\"".$product['id']."\" value=\"".$product['id']."\"></div>
 						<div class=\"inner\"><input type=\"submit\" class=\"buttonUpdate\" name=\"removeFromCart\" value=\"";content('rmvBtn');echo"\" /></div>
 						</form>
@@ -84,13 +88,13 @@ $(document).ready(function(){
 					</div>
 				</div>";
 		}
-				/*if(isset($_POST['removeFromCart'])){ // button name
+				if(isset($_POST['removeFromCart'])){ // button name
 					 $id = $_POST['id_val'];
 					removeFromCart($db, $client, $id);
 					header('Location:./cart.php?lang='.$lang);
 				}else{
-				};*/
-				
+				};
+				echo "</span>";
 		?>
 
 </body>

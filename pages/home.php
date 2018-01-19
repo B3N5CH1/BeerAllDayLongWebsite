@@ -123,8 +123,6 @@ if (session_status() == PHP_SESSION_NONE) {
 				<script src="../javascript/sliding_menu.js"></script>
 		<meta charset="utf-8" />
 		<title>Beer All Day Long</title>
-		<link rel="stylesheet" type="text/css"
-				media="screen" href="../css/styleq.css" />
 				<link rel="stylesheet" type="text/css"
 		media="screen" href="../css/styleb.css" />
 

@@ -121,8 +121,8 @@ function removeFromDB($table, $key) {
 	return $res;
 }
 
-if (isset($_POST['email'])) {
-	echo removeFromDB('client', $_POST['email']);
+if (isset($_POST['rmemail'])) {
+	echo removeFromDB('client', $_POST['rmemail']);
 } else if (isset($_POST['id'])) {
 	echo "<script>alert('post correct')</script>";
 	echo removeFromDB('products', $_POST['id']);
