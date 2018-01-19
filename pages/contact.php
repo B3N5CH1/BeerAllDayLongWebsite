@@ -31,8 +31,8 @@
       <h1  style="text-align:center;"><?php content('contact'); ?></h1>
 
       <div class="contactTxt" style="text-align:center;">
-        <div>benjaminlukas.graf@students.bfh.ch</div>
-        <div>quentin.flueckiger@students.bfh.ch</div>
+        <div><a href="mailto:benjaminlukas.graf@students.bfh.ch">Benjamin Graf</a></div>
+        <div><a href="quentin.flueckiger@students.bfh.ch">Quentin Flückiger</a></div>
     </div>
     </main>
   </body>

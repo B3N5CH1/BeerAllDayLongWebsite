@@ -34,10 +34,10 @@ if (isset($_POST["fname"]) && isset($_POST["lname"])) {
 					$pw = md5($_POST["password"]);
 
 					if (isset($_POST["bday"])) {
-						$bday = date('Y-m-d', strtotime($_POST["bday"]));
+						$bday = date('Y-m-d', strtotime($conn->escape_string($_POST["bday"])));
 
 						if (isset($_POST["email"])) {
-							$email = $_POST["email"];
+							$email = $conn->escape_string($_POST["email"]);
 
 							$lf = "CHAR(13)";
 
@@ -47,33 +47,33 @@ if (isset($_POST["fname"]) && isset($_POST["lname"])) {
 
 							$succ = addToDB("client", $values);
 
-							//sendMail($email);
+							sendMail($email);
 						} else {
-							echo "[Error] No birthday received.";
+							echo t('errMail');
 						}
 					} else {
-						echo "[Error] No birthday received.";
+						echo t('errBday');
 					}
 				} else {
-					echo "[Error] No password received.";
+					echo t('errPw');
 				}
 			} else {
-				echo "[Error] No country received.";
+				echo t('errCountry');
 			}
 		} else {
-			echo "[Error] No zip and/or city received.";
+			echo t('errCity');
 		}
 	} else {
-		echo "[Error] No street and/or house number received.";
+		echo t('errAdd');
 	}
 } else {
-	echo "[Error] No name received.";
+	echo t('errName');
 }
 
 function sendMail($to) {
 	$from = "LeBeerShop Team <LeBeerShop@gmail.com>";
 	$subject = "Registration!";
-	$body = "Hi!\n\nYou successfully registrated on LeBeerShop.ch\n\nYou can login with this email address.\n\nWe hope you find something you'll enjoy!\n\nKind regards\nThe LeBeerShop Team";
+	$body = t('emailBody');
 
 	$headers = array(
     	'From' => $from,
@@ -92,14 +92,11 @@ function sendMail($to) {
 	$mail = $smtp->send($to, $headers, $body);
 
 	if (PEAR::isError($mail)) {
-    	echo('<p>' . $mail->getMessage() . '</p>');
+    	echo('<p>' . $mail->getUserInfo() . '</p>');
 	} else {
     	echo('<p>Message successfully sent!</p>');
 	}
 }
-
-echo $succ;
-
 
 	echo "<!DOCTYPE html>";
 	echo "<html lang='en'>";
@@ -107,17 +104,27 @@ echo $succ;
 		echo "<meta charset='utf-8' />";
 		echo "<title>Sign Up</title>";
 		echo "<link rel='stylesheet' type='text/css' media='screen' href='../css/styleb.css' />";
+		echo "<script src=\"../javascript/sliding_menu.js\"></script>";
 	echo "</head>";
-	echo "<body class='centered'>";
+	echo "<body>";
+		createBurger();
+
+		echo "<nav>";
+		  echo "<span>";
+			echo "<span style='font-size:30px;cursor:pointer;position:relative;' onclick='openNav()'>&#9776;";
+			echo "</span>";
+		  echo "</span>";
+		echo "</nav>";
+
+		echo "<main  class='centered'>";
 		if ($succ) {
-
-
-
 			echo "<h2>Success</h2>";
-			echo "<p>You successfully registrated. You can log in <a href='./login.php".add_param($url,'lang',$_GET['lang'])."'>here</a> now.</p>";
+			echo "<p>".t('regSucc')." <a href='./login.php".add_param($url,'lang',$_GET['lang'])."'>".t('here')."</a> now.</p>";
 		} else {
-			echo "<p>There was an error signing up.</p>";
+			echo "<p>".t('regErr')."</p>";
 		}
+
+		echo "</main>";
 
 
 	echo "</body>";

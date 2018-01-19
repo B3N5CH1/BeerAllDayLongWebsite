@@ -22,39 +22,38 @@ echo "<!DOCTYPE html>";
  </nav>";
 		echo "<main  class='centered'>";
 		echo "<h1>Sign Up</h1>";
-		echo "<p>Fill in the form to sign up as a new customer.<br>
-		If you already have an account, you can log in <a href='./login.php".add_param($url,'lang',$_GET['lang'])."'>here</a></p>";
+		echo "<p>".t('signFormText')."<a href='./login.php".add_param($url,'lang',$_GET['lang'])."'>".t('here')."</a></p>";
 		echo "<div class='form'>";
 			echo "<form action='./registration.php".add_param($url,'lang',$_GET['lang'])."' method='post'>";
 
 				echo "<div class='form_col_l'>";
-					echo "<p><label>First name: </label><input type='text' name='fname' required='required'></p>";
+					echo "<p><label>".t('fname').": </label><input type='text' name='fname' required='required'></p>";
 				echo "</div>";
 				echo "<div class='form_col_r'>";
-					echo "<p><label>Last name: </label><input type='text' name='lname' required='required'></p>";
+					echo "<p><label>".t('lname').": </label><input type='text' name='lname' required='required'></p>";
 				echo "</div>";
 
 				echo "<div class='form_col_l'>";
-					echo "<p><label>Street: </label><input type='text' name='street' required='required'></p>";
+					echo "<p><label>".t('street').": </label><input type='text' name='street' required='required'></p>";
 				echo "</div>";
 				echo "<div class='form_col_r'>";
-					echo "<p><label>House number: </label><input type='text', name='hnum' required='required'></p>";
+					echo "<p><label>".t('hnum').": </label><input type='text', name='hnum' required='required'></p>";
 				echo "</div>";
 
 				echo "<div class='form_col_l'>";
-					echo "<p><label>ZIP Code: </label><input type='text' name='zip' required='required'></p>";
+					echo "<p><label>".t('hnum').": </label><input type='text' name='zip' required='required'></p>";
 				echo "</div>";
 				echo "<div class='form_col_r'>";
-					echo "<p><label>City: </label><input type='text' name='city' required='required'></p>";
+					echo "<p><label>".t('city').": </label><input type='text' name='city' required='required'></p>";
 				echo "</div>";
 
-				echo "<p><label>Country: </label><input type='text' name='country' required='required'></p>";
+				echo "<p><label>".t('country').": </label><input type='text' name='country' required='required'></p>";
 
 				echo "<div class='form_col_l'>";
 					  echo "<p><label>Email: </label><input type='email' name='email' required='required'></p>";
 				echo "</div>";
 				echo "<div class='form_col_r'>";
-					  echo "<p><label>Birthday: </label><input type='date' name='bday' required='required'></p>";
+					  echo "<p><label>".t('bday').": </label><input type='date' name='bday' required='required'></p>";
 				echo "</div>";
 
 				echo "<script>var check = function() {";
@@ -70,10 +69,10 @@ echo "<!DOCTYPE html>";
 				echo "</script>";
 
 				echo "<div class='form_col_l'>";
-					echo "<p><label>Password: </label><input id='pw' type='password' name='password' required='required'></p>";
+					echo "<p><label>".t('pw')."</label><input id='pw' type='password' name='password' required='required'></p>";
 				echo "</div>";
 				echo "<div class='form_col_r'>";
-					echo "<p><label id='pwl'>Verify password: </label><input id='vpw' type='password' name='vpassword' required='required' onkeyup='check();'></p>";
+					echo "<p><label id='pwl'>".t('vpw').": </label><input id='vpw' type='password' name='vpassword' required='required' onkeyup='check();'></p>";
 				echo "</div>";
 
 				echo "<input type='submit' value='Submit'>";

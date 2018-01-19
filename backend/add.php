@@ -125,17 +125,3 @@ if (isset($_POST["fname"]) && isset($_POST["lname"])) {
 } else {
 	echo "[Error] No name received.";
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-echo $succ;
