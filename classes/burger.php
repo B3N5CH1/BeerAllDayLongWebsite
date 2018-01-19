@@ -298,21 +298,12 @@ function t($key) {
 		)
 
 	);
-}
-
-if (isset($texts[$key][$language])) {
-	return $texts[$key][$language];
-} else {
-	return "[$key]";
-}
-
-
-);
-if (isset($texts[$key][$language])) {
-	return $texts[$key][$language];
-} else {
-	return "[$key]";
-}
+	
+	if (isset($texts[$key][$language])) {
+		return $texts[$key][$language];
+	} else {
+		return "[$key]";
+	}
 }
 
 $language = get_param('lang', 'en');
