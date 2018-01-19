@@ -140,5 +140,5 @@ if (isset($_POST['rmemail'])) {
 } else if (isset($_POST['confemail'])) {
 	   confirmOrder($_POST['confemail']);
 } else {
-	  echo "<script>console.log('Post values: ".var_dump($_POST)."')</script>";
+	  //echo "<script>console.log('Post values: ".var_dump($_POST)."')</script>";
 }

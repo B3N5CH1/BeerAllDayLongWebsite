@@ -45,9 +45,9 @@ function get_param($name, $default) {
 						'en'=>'Page'
 				),
 				'content' => array(
-						'de'=>'Willkommen auf der Seite ',
-						'fr'=>'Bienvenue à  la page ',
-						'en'=>'Welcome to the page '
+						'de'=>'Unsere Produkte ',
+						'fr'=>'Nos Produits ',
+						'en'=>'Our Products '
 				),
 				'button' => array(
 						'de' => 'Zu den Produkten!',

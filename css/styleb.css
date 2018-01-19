@@ -199,7 +199,7 @@ footer {
 
 #wrap {
 	position: relative; /* make this relative to have the inner div absolute without breaking out */
-	 max-width: 800px;/* fix the width or else it'll be the entire page's width */
+	max-width: 800px;/* fix the width or else it'll be the entire page's width */
 }
 #text {
 	position: absolute;

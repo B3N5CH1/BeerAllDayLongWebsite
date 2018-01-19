@@ -59,7 +59,8 @@
       while($product = $result->fetch_assoc()){
           $descr = "description_".$lang;
 
-          $img =strtolower(str_replace(' ','',$product['name']));
+					$img = ($product['name'].$product['size']);
+					$img =strtolower(str_replace(' ','',$img));
 
           echo "<div id=\"wrap\">
       			<img src=\"../images/beer/".$img.".jpg\" />
